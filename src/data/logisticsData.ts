@@ -38,41 +38,55 @@ export interface FaqItem {
   category: string;
 }
 
-export const MARKETPLACES = [
+export interface Marketplace {
+  name: string;
+  tag: string;
+  iconColor: string;
+  description: string;
+  badge: string;
+  logo: string;
+}
+
+export const MARKETPLACES: Marketplace[] = [
   {
     name: 'Mercado Livre Flex',
     tag: 'Mercado Envios Flex',
     iconColor: '#FFE600',
     description: 'Entrega no mesmo dia com reputação verde blindada',
-    badge: '100% Homologado'
+    badge: '100% Homologado',
+    logo: 'https://cdn.simpleicons.org/mercadolibre/FFE600'
   },
   {
     name: 'Shopee Direta & Flex',
     tag: 'Shopee Same Day',
     iconColor: '#EE4D2D',
     description: 'Cumprimento rigoroso da janela de envio',
-    badge: 'Vendedor Indicado'
+    badge: 'Vendedor Indicado',
+    logo: 'https://cdn.simpleicons.org/shopee/EE4D2D'
   },
   {
     name: 'Amazon Flex',
     tag: 'Amazon Prime Same Day',
     iconColor: '#FF9900',
     description: 'Agilidade máxima nos envios prioritários SP',
-    badge: 'Padrão Prime'
+    badge: 'Padrão Prime',
+    logo: 'https://cdn.simpleicons.org/amazon/FF9900'
   },
   {
     name: 'Magalu Entregas',
     tag: 'Magalu Same Day',
     iconColor: '#0086FF',
     description: 'Retiradas pontuais e baixa imediata de pacotes',
-    badge: 'Alta Performance'
+    badge: 'Alta Performance',
+    logo: 'https://cdn.simpleicons.org/magalu/0086FF'
   },
   {
     name: 'E-commerce Próprio & Shopify',
     tag: 'Direct-to-Consumer',
     iconColor: '#00e7fe',
     description: 'Same Day Delivery para sua loja virtual ou WhatsApp',
-    badge: 'VIP Express'
+    badge: 'VIP Express',
+    logo: 'https://cdn.simpleicons.org/shopify/00e7fe'
   }
 ];
 
