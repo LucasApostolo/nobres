@@ -1,4 +1,4 @@
-export const DEFAULT_WHATSAPP_PHONE = '5511999998888'; // Format for SP region
+export const DEFAULT_WHATSAPP_PHONE = '5511980224789'; // Format for SP region
 
 export interface QuoteParams {
   storeName?: string;
@@ -10,7 +10,7 @@ export interface QuoteParams {
 }
 
 export function buildWhatsAppLink(params?: QuoteParams): string {
-  const phone = '5511999998888'; // Número de atendimento Nobres Entregas
+  const phone = '5511980224789'; // Número de atendimento Nobres Entregas
   
   if (!params || Object.keys(params).length === 0) {
     const text = encodeURIComponent(
