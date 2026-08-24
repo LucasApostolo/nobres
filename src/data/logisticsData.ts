@@ -54,7 +54,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#FFE600',
     description: 'Entrega no mesmo dia com reputação verde blindada',
     badge: '100% Homologado',
-    logo: 'https://cdn.simpleicons.org/handshake/FFE600'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Mercado_Livre_logo.svg'
   },
   {
     name: 'Shopee Direta & Flex',
@@ -78,7 +78,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#0086FF',
     description: 'Retiradas pontuais e baixa imediata de pacotes',
     badge: 'Alta Performance',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Magazine_Luiza_logo.svg'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Magalu_Logo.svg'
   },
   {
     name: 'E-commerce Próprio & Shopify',
