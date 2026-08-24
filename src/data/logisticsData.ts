@@ -54,7 +54,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#FFE600',
     description: 'Entrega no mesmo dia com reputação verde blindada',
     badge: '100% Homologado',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mercadolibre.svg'
+    logo: 'https://cdn.simpleicons.org/handshake/FFE600'
   },
   {
     name: 'Shopee Direta & Flex',
@@ -62,7 +62,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#EE4D2D',
     description: 'Cumprimento rigoroso da janela de envio',
     badge: 'Vendedor Indicado',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopee.svg'
+    logo: 'https://cdn.simpleicons.org/shopee/EE4D2D'
   },
   {
     name: 'Amazon Flex',
@@ -70,7 +70,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#FF9900',
     description: 'Agilidade máxima nos envios prioritários SP',
     badge: 'Padrão Prime',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazon.svg'
+    logo: 'https://cdn.simpleicons.org/amazon/FF9900'
   },
   {
     name: 'Magalu Entregas',
@@ -83,10 +83,10 @@ export const MARKETPLACES: Marketplace[] = [
   {
     name: 'E-commerce Próprio & Shopify',
     tag: 'Direct-to-Consumer',
-    iconColor: '#00e7fe',
+    iconColor: '#95BF47',
     description: 'Same Day Delivery para sua loja virtual ou WhatsApp',
     badge: 'VIP Express',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopify.svg'
+    logo: 'https://cdn.simpleicons.org/shopify/95BF47'
   }
 ];
 
