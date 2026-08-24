@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Truck, MessageCircle, Menu, X, ShieldCheck, Phone } from 'lucide-react';
+import { MessageCircle, Menu, X, ShieldCheck, Phone } from 'lucide-react';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
 interface NavbarProps {
@@ -18,14 +18,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lista encurtada de links para dar respiro ao layout
   const navLinks = [
-    { label: 'Início', href: '#inicio' },
     { label: 'Soluções', href: '#servicos' },
     { label: 'Comparativo', href: '#comparativo' },
     { label: 'Simulador', href: '#simulador' },
     { label: 'Cobertura', href: '#cobertura' },
-    { label: 'Como Funciona', href: '#passo-a-passo' },
-    { label: 'Depoimentos', href: '#depoimentos' },
     { label: 'Dúvidas', href: '#faq' },
   ];
 
@@ -55,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               rel="noopener noreferrer"
               className="hover:text-[#00e7fe] flex items-center gap-1.5 text-slate-300 transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#00e7fe]" /> (11) 98022-4789
+              <Phone className="w-3 h-3 text-[#00e7fe]" /> (11) 96440-2156
             </a>
           </div>
         </div>
@@ -71,11 +69,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            
+            {/* Logo Oficial com Fallback */}
             <a href="#inicio" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#00e7fe] to-[#008ef4] rounded-xl flex items-center justify-center shadow-[0_0_18px_rgba(0,231,254,0.4)] group-hover:scale-105 transition-transform">
-                <Truck className="w-5 h-5 text-slate-950 stroke-[2.5]" />
-              </div>
+              <img 
+                src="/logos/nobres.png" 
+                alt="Nobres Entregas Flex" 
+                className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
                   <span className="text-lg sm:text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
@@ -88,8 +92,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               </div>
             </a>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+            {/* Desktop Navigation Links (Limpo e Encurtado) */}
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-3">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -141,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white/70 hover:text-[#00e7fe] rounded-lg bg-white/[0.03] border border-white/5"
+                  className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white/70 hover:text-[#00e7fe] rounded-lg bg-white/[0.03] border border-white/5 text-center"
                 >
                   {link.label}
                 </a>
@@ -176,4 +180,3 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     </>
   );
 };
-
