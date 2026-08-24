@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                 </div>
                 <div className="text-right">
                   <div className="text-[11px] text-slate-500 uppercase tracking-widest font-semibold">SLA de Entrega</div>
-                  <div className="text-3xl sm:text-4xl font-black text-[#10B981]">99.4%</div>
+                  <div className="text-3xl sm:text-4xl font-black text-[#10B981]">98.7%</div>
                 </div>
               </div>
 
