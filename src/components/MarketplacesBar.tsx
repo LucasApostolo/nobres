@@ -6,21 +6,21 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
   switch (id) {
     case 'mercadolivre':
       return (
-        <div className="flex items-center justify-center w-full overflow-visible">
+        <div className="flex items-center justify-center h-full w-full">
           <img 
             src="/logos/mercadolivre.png" 
             alt="Mercado Livre" 
-            className="h-16 sm:h-20 w-auto object-contain scale-[2.2] filter brightness-200 contrast-125" 
+            className="h-10 sm:h-11 w-auto object-contain" 
           />
         </div>
       );
     case 'shopee':
       return (
-        <div className="flex items-center justify-center w-full overflow-visible">
+        <div className="flex items-center justify-center h-full w-full">
           <img 
             src="/logos/shopee.png" 
             alt="Shopee" 
-            className="h-14 sm:h-16 w-auto object-contain scale-[2.1]" 
+            className="h-10 sm:h-11 w-auto object-contain" 
           />
         </div>
       );
@@ -44,9 +44,11 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
     case 'shopify':
       return (
         <div className="flex items-center justify-center gap-2">
-          {/* Logo Oficial Shopify (Intacto) */}
-          <svg className="h-8 w-auto fill-current text-[#95BF47]" viewBox="0 0 108 122">
-            <path d="M85.5 17.6c-1.2-3.8-4.2-4.1-4.2-4.1s-3.2-.3-6.2.7c-2.8-5.3-7.8-8.9-14.1-8.9h-.6c-1.3-2.1-3.6-3.5-6.2-3.5-4.4 0-7.8 3.4-8 7.7-4.5.9-8.5 3.3-11.2 6.8-4.1 5.3-4.8 12.6-4.8 12.6l-13.6 3.8s-4.3 1.2-5.4 5.3c-1 4.1.3 22.8 1.8 33.2 1.5 10.4 12.3 49.3 13.5 53.3 1.2 4 4.5 6.7 8.5 6.7 0 0 34.6 0 45.4 0 7.8 0 13.3-5.3 14.5-12.7 2.3-14.8 12.6-78.2 12.6-78.2s1.1-4.8-2-9.2zM52 11.2c2.1 0 3.8 1.7 3.8 3.8 0 .4-.1.8-.2 1.2l-7.3 2c.7-4 2.3-7 3.7-7zM36.1 18.2c2.2-2.9 5.5-4.8 9.3-5.3l3.5 19.3-10.8 3c.1-.4 1.3-12.5-2-17zm35.2 92.5c-.7 4.1-3.6 6.8-7.8 6.8H28.4c-2.2 0-4-1.5-4.7-3.8C22.6 110 12.7 73.8 11.4 64.1c-1.2-8.8-1.5-23-.8-26.1.7-2.8 3.1-3.6 3.1-3.6l10.9-3.1 15 82.2c.4 2.2 2.3 3.8 4.5 3.8 0 0 .1 0 .2 0 2.4-.2 4.1-2.2 4-4.6l-1.3-33.1 11.7-3.3 17 48.7z"/>
+          {/* Logo Oficial Shopify com o contraste correto para fundo escuro */}
+          <svg className="h-7 w-auto fill-[#95BF47]" viewBox="0 0 24 24">
+            <path d="M21.2 5.1s-1.8-.4-3.1-.4c-1.1 0-1.8.4-2.1.6L19.4 19l3.4-1.1-1.6-12.8z"/>
+            <path d="M16.3 3.3c-.1 0-.8 0-1.8.3-.9-.6-1.9-.9-2.8-.9-2.7 0-4.2 1.6-4.2 3.1 0 2.2 3.2 2.8 3.2 4.2 0 .6-.5.9-1.1.9-.9 0-1.6-.4-2.1-.8l-.6 1.5c.7.5 1.7.8 2.8.8 2.5 0 4-1.4 4-3.1 0-2.3-3.2-2.7-3.2-4.2 0-.4.3-.8 1-.8.7 0 1.3.3 1.8.6l.5-1.4c-.1 0 0 0-.5-.2z"/>
+            <path d="M5.3 8.4 3 18.3l13.5 2.8L14.9 7.3s-.9-.4-1.9-.4c-1.1 0-2.1.4-2.1.4L9.6 4.1 5.3 8.4z"/>
           </svg>
           <span className="font-extrabold text-2xl text-white tracking-tight">shopify</span>
         </div>
@@ -79,7 +81,7 @@ export const MarketplacesBar: React.FC = () => {
                 {mp.badge}
               </span>
 
-              <div className="my-5 h-12 flex items-center justify-center w-full overflow-visible">
+              <div className="my-5 h-12 flex items-center justify-center w-full">
                 <MarketplaceLogo id={mp.id} />
               </div>
 
