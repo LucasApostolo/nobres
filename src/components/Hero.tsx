@@ -93,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-200">99.4% Taxa de SLA</p>
+                  <p className="font-bold text-slate-200">98.7% Taxa de SLA</p>
                   <p className="text-[11px] text-slate-400">Entregas no prazo garantido</p>
                 </div>
               </div>
