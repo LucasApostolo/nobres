@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               </div>
               <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <span className="text-xs font-medium text-slate-300">Cut-off estendido até 14h30</span>
+                <span className="text-xs font-medium text-slate-300">Melhor Horário de Corte</span>
               </div>
               <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
