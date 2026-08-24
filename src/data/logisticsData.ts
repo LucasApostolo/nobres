@@ -289,7 +289,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Qual é o horário limite (cut-off) para postagem no mesmo dia?',
-    answer: 'Atendemos horários de corte estendidos, normalmente entre 14h00 e 15h00 (a depender da sua localização em São Paulo). Isso permite que você receba pedidos até o início da tarde e ainda entregue no mesmo dia, aumentando drasticamente suas conversões.',
+    answer: 'Atendemos horários de corte estendidos, normalmente entre 12h00 e 13h00 (a depender da sua localização em São Paulo). Isso permite que você receba pedidos até o início da tarde e ainda entregue no mesmo dia, aumentando drasticamente suas conversões.',
     category: 'Operação'
   },
   {
@@ -329,13 +329,13 @@ export const COMPARISON_DATA = [
   {
     feature: 'Horário de Corte (Cut-off)',
     commonCarrier: 'Cedo (11h às 12h), fazendo você perder vendas da tarde',
-    routeFlexCarrier: 'Estendido (até 14h30/15h00) para maximizar suas vendas',
+    routeFlexCarrier: 'Estendido (até 13h00/14h00) para maximizar suas vendas',
     status: 'win'
   },
   {
     feature: 'Reputação nos Marketplaces',
     commonCarrier: 'Atrasos frequentes que rebaixam a conta para termômetro amarelo',
-    routeFlexCarrier: 'SLA 99.4% que blinda e mantém sua medalha Líder/Platinum',
+    routeFlexCarrier: 'SLA 98.7% que blinda e mantém sua medalha Líder/Platinum',
     status: 'win'
   },
   {
