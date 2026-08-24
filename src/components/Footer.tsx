@@ -1,5 +1,5 @@
 import React from 'react';
-import { Truck, MessageCircle, Phone, Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import { MessageCircle, Phone, Mail, MapPin, Clock, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
 export const Footer: React.FC = () => {
@@ -12,12 +12,15 @@ export const Footer: React.FC = () => {
           
           {/* Col 1 & 2: Brand & About */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#inicio" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#00e7fe] to-[#008ef4] p-[1px] shadow-[0_0_20px_rgba(0,231,254,0.3)]">
-                <div className="w-full h-full bg-[#070A12] rounded-[15px] flex items-center justify-center">
-                  <Truck className="w-5 h-5 text-[#00e7fe]" />
-                </div>
-              </div>
+            <a href="#inicio" className="flex items-center gap-3 group">
+              <img 
+                src="/logos/nobres.png" 
+                alt="Nobres Entregas Flex" 
+                className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
                   <span className="text-lg font-extrabold tracking-tight text-white">NOBRES</span>
@@ -35,10 +38,10 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 pt-2">
               <div className="p-2 rounded-full bg-white/5 border border-white/10 text-[#10B981] flex items-center gap-1.5 text-[11px] font-semibold">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Empresa Certificada Flex</span>
+                <span>Empresa Homologada</span>
               </div>
               <div className="p-2 rounded-full bg-white/5 border border-white/10 text-[#00e7fe] flex items-center gap-1.5 text-[11px] font-semibold">
-                <Truck className="w-4 h-4" />
+                <CheckCircle2 className="w-4 h-4" />
                 <span>SLA 98.7%</span>
               </div>
             </div>
@@ -85,7 +88,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <span>(11) 98022-4789</span>
+                <a href={buildWhatsAppLink()} className="hover:text-[#00e7fe] transition-colors">(11) 98022-4789</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#00e7fe] shrink-0" />
