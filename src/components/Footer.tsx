@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2.5 text-xs text-slate-300">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#00e7fe] shrink-0 mt-0.5" />
-                <span>Hub Central: Av. do Estado, São Paulo - SP</span>
+                <span>Hub Central: R. São Leopoldo, 811 - Belenzinho, São Paulo - SP</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-[#00e7fe] shrink-0" />
