@@ -23,9 +23,9 @@ export const SimulatorSection: React.FC = () => {
 
   const getCutoff = (reg: string) => {
     if (reg.includes('Centro')) return '15h00';
-    if (reg.includes('Leste') || reg.includes('Sul') || reg.includes('Oeste')) return '14h30';
-    if (reg.includes('Norte')) return '14h00';
-    return '13h30';
+    if (reg.includes('Leste') || reg.includes('Sul') || reg.includes('Oeste')) return '13h00';
+    if (reg.includes('Norte')) return '13:00';
+    return '13h00';
   };
 
   const handleWhatsAppQuote = () => {
