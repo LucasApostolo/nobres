@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-radial-glow {
+    background-radial: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+/* Sophisticated Dark Theme Glows & Shadows */
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(0, 231, 254, 0.4), 0 0 10px -2px rgba(0, 231, 254, 0.2);
+}
+
+.glow-blue {
+  box-shadow: 0 10px 30px rgba(0, 142, 244, 0.3), 0 0 20px rgba(0, 231, 254, 0.15);
+}
+
+.glow-pill {
+  box-shadow: 0 0 20px rgba(0, 231, 254, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 231, 254, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(0, 231, 254, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -15px rgba(0, 142, 244, 0.2), 0 0 20px rgba(0, 231, 254, 0.1);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 231, 254, 0.25);
+}
+
+.text-gradient-cyan-blue {
+  background: linear-gradient(135deg, #00e7fe 0%, #008ef4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-btn {
+  background: linear-gradient(135deg, #00e7fe 0%, #008ef4 100%);
+}
+
+.bg-gradient-btn:hover {
+  background: linear-gradient(135deg, #1cebfe 0%, #159bfd 100%);
+}
+
+/* Background tech grid */
+.tech-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #070A12;
+}
+::-webkit-scrollbar-thumb {
+  background: #182032;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #008ef4;
+}
+
