@@ -42,9 +42,9 @@ export interface Marketplace {
   id: string;
   name: string;
   tag: string;
-  iconColor: string;
   description: string;
   badge: string;
+  borderColor: string;
 }
 
 export const MARKETPLACES: Marketplace[] = [
@@ -52,41 +52,41 @@ export const MARKETPLACES: Marketplace[] = [
     id: 'mercadolivre',
     name: 'Mercado Livre Flex',
     tag: 'Mercado Envios Flex',
-    iconColor: '#FFE600',
     description: 'Entrega no mesmo dia com reputação verde blindada',
-    badge: '100% Homologado'
+    badge: '100% Homologado',
+    borderColor: 'hover:border-yellow-400/50'
   },
   {
     id: 'shopee',
     name: 'Shopee Direta & Flex',
     tag: 'Shopee Same Day',
-    iconColor: '#EE4D2D',
     description: 'Cumprimento rigoroso da janela de envio',
-    badge: 'Vendedor Indicado'
+    badge: 'Vendedor Indicado',
+    borderColor: 'hover:border-orange-500/50'
   },
   {
     id: 'amazon',
     name: 'Amazon Flex',
     tag: 'Amazon Prime Same Day',
-    iconColor: '#FF9900',
     description: 'Agilidade máxima nos envios prioritários SP',
-    badge: 'Padrão Prime'
+    badge: 'Padrão Prime',
+    borderColor: 'hover:border-amber-500/50'
   },
   {
     id: 'magalu',
     name: 'Magalu Entregas',
     tag: 'Magalu Same Day',
-    iconColor: '#0086FF',
     description: 'Retiradas pontuais e baixa imediata de pacotes',
-    badge: 'Alta Performance'
+    badge: 'Alta Performance',
+    borderColor: 'hover:border-blue-500/50'
   },
   {
     id: 'shopify',
     name: 'E-commerce Próprio & Shopify',
     tag: 'Direct-to-Consumer',
-    iconColor: '#95BF47',
     description: 'Same Day Delivery para sua loja virtual ou WhatsApp',
-    badge: 'VIP Express'
+    badge: 'VIP Express',
+    borderColor: 'hover:border-lime-500/50'
   }
 ];
 
