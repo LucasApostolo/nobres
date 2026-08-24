@@ -54,7 +54,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#FFE600',
     description: 'Entrega no mesmo dia com reputação verde blindada',
     badge: '100% Homologado',
-    logo: 'https://cdn.simpleicons.org/mercadolibre/FFE600'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mercadolibre.svg'
   },
   {
     name: 'Shopee Direta & Flex',
@@ -62,7 +62,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#EE4D2D',
     description: 'Cumprimento rigoroso da janela de envio',
     badge: 'Vendedor Indicado',
-    logo: 'https://cdn.simpleicons.org/shopee/EE4D2D'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopee.svg'
   },
   {
     name: 'Amazon Flex',
@@ -70,7 +70,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#FF9900',
     description: 'Agilidade máxima nos envios prioritários SP',
     badge: 'Padrão Prime',
-    logo: 'https://cdn.simpleicons.org/amazon/FF9900'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazon.svg'
   },
   {
     name: 'Magalu Entregas',
@@ -78,7 +78,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#0086FF',
     description: 'Retiradas pontuais e baixa imediata de pacotes',
     badge: 'Alta Performance',
-    logo: 'https://cdn.simpleicons.org/magalu/0086FF'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Magazine_Luiza_logo.svg'
   },
   {
     name: 'E-commerce Próprio & Shopify',
@@ -86,7 +86,7 @@ export const MARKETPLACES: Marketplace[] = [
     iconColor: '#00e7fe',
     description: 'Same Day Delivery para sua loja virtual ou WhatsApp',
     badge: 'VIP Express',
-    logo: 'https://cdn.simpleicons.org/shopify/00e7fe'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopify.svg'
   }
 ];
 
@@ -258,7 +258,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     salesIncrease: '+48% de Faturamento',
     deliveryVolume: '~180 pacotes/dia no Flex',
-    comment: 'Estávamos perdendo a medalha Platinum porque a transportadora antiga atrasava coletas e sumia com pacotes. Desde que migramos para a Nobres Entregas, nosso SLA está em 99.7%. O suporte no WhatsApp responde em segundos!'
+    comment: 'Estávamos perdendo a medalha Platinum porque a transportadora antiga atrasava coletas e sumia com pacotes. Desde que migramos para a RouteFlex, nosso SLA está em 99.7%. O suporte no WhatsApp responde em segundos!'
   },
   {
     id: '2',
@@ -282,7 +282,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     salesIncrease: '+55% no Same Day',
     deliveryVolume: '~210 pacotes/dia',
-    comment: 'Peça de carro quem compra quer para hoje. A Nobres Entregas nos deu a segurança de estender o horário de corte até 14h30. Nossas vendas de última hora explodiram e nunca mais tivemos reclamação de atraso.'
+    comment: 'Peça de carro quem compra quer para hoje. A RouteFlex nos deu a segurança de estender o horário de corte até 14h30. Nossas vendas de última hora explodiram e nunca mais tivemos reclamação de atraso.'
   }
 ];
 
@@ -323,37 +323,37 @@ export const COMPARISON_DATA = [
   {
     feature: 'Horário de Coleta Diária',
     commonCarrier: 'Incerto e imprevisível (muitas vezes atrasa ou fura)',
-    nobresCarrier: 'Janela fixa garantida todos os dias com motorista dedicado',
+    routeFlexCarrier: 'Janela fixa garantida todos os dias com motorista dedicado',
     status: 'win'
   },
   {
     feature: 'Horário de Corte (Cut-off)',
     commonCarrier: 'Cedo (11h às 12h), fazendo você perder vendas da tarde',
-    nobresCarrier: 'Estendido (até 14h30/15h00) para maximizar suas vendas',
+    routeFlexCarrier: 'Estendido (até 14h30/15h00) para maximizar suas vendas',
     status: 'win'
   },
   {
     feature: 'Reputação nos Marketplaces',
     commonCarrier: 'Atrasos frequentes que rebaixam a conta para termômetro amarelo',
-    nobresCarrier: 'SLA 99.4% que blinda e mantém sua medalha Líder/Platinum',
+    routeFlexCarrier: 'SLA 99.4% que blinda e mantém sua medalha Líder/Platinum',
     status: 'win'
   },
   {
     feature: 'Suporte & Comunicação',
     commonCarrier: 'Tickets lentos, robôs genéricos e dias sem resposta',
-    nobresCarrier: 'Grupo VIP no WhatsApp com gestor de conta ativo (< 3 min)',
+    routeFlexCarrier: 'Grupo VIP no WhatsApp com gestor de conta ativo (< 3 min)',
     status: 'win'
   },
   {
     feature: 'Tratativa de Insucesso/Ausente',
     commonCarrier: 'Pacote devolvido sem aviso ou perdido na base',
-    nobresCarrier: 'Tentativa de contato imediato na porta e reentrega ágil',
+    routeFlexCarrier: 'Tentativa de contato imediato na porta e reentrega ágil',
     status: 'win'
   },
   {
     feature: 'Operação aos Sábados',
     commonCarrier: 'Geralmente não coletam ou cobram taxas abusivas',
-    nobresCarrier: 'Coleta e entrega ativas aos sábados para turbinar o faturamento',
+    routeFlexCarrier: 'Coleta e entrega ativas aos sábados para turbinar o faturamento',
     status: 'win'
   }
 ];
