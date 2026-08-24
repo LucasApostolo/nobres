@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="p-2 rounded-full bg-white/5 border border-white/10 text-[#00e7fe] flex items-center gap-1.5 text-[11px] font-semibold">
                 <Truck className="w-4 h-4" />
-                <span>SLA 99.4%</span>
+                <span>SLA 98.7%</span>
               </div>
             </div>
           </div>
