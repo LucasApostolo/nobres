@@ -10,7 +10,7 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
           <img 
             src="/logos/mercadolivre.png" 
             alt="Mercado Livre" 
-            className="h-10 w-auto max-w-[140px] object-contain" 
+            className="h-14 w-auto object-contain scale-110" 
           />
         </div>
       );
@@ -20,7 +20,7 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
           <img 
             src="/logos/shopee.png" 
             alt="Shopee" 
-            className="h-9 w-auto max-w-[130px] object-contain" 
+            className="h-12 w-auto object-contain scale-110" 
           />
         </div>
       );
