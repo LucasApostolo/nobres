@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                   <TrendingUp className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-200">+250 mil Pacotes</p>
+                  <p className="font-bold text-slate-200">+1.000.000 milhão Pacotes</p>
                   <p className="text-[11px] text-slate-400">Entregues com sucesso em SP</p>
                 </div>
               </div>
