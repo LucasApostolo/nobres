@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   ShieldCheck, 
   ArrowRight, 
-  MessageCircle, 
   Clock, 
   CheckCircle2, 
-  MapPin, 
   TrendingUp, 
-  Package, 
-  Sparkles,
-  Truck,
-  Award
+  Award,
+  Play
 } from 'lucide-react';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
@@ -19,9 +15,11 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section id="inicio" className="relative pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden tech-grid-pattern">
-      {/* Background ambient neon glows matching Sophisticated Dark theme */}
+      {/* Background ambient neon glows */}
       <div className="absolute top-[-100px] right-[-100px] w-[450px] h-[450px] bg-[#008ef4] opacity-[0.08] blur-[120px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#00e7fe] opacity-[0.05] blur-[120px] rounded-full pointer-events-none -z-10" />
 
@@ -121,75 +119,62 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
 
           </div>
 
-          {/* Right Column: Interactive Operational Dashboard Visual */}
-          <div className="lg:col-span-5 flex flex-col gap-4 relative">
-            
-            {/* Main SLA & Reputation Card */}
-            <div className="p-6 rounded-3xl bg-white/[0.03] border border-[#00e7fe]/20 backdrop-blur-xl relative overflow-hidden group shadow-2xl">
-              <div className="absolute -top-10 -right-10 w-36 h-36 bg-[#00e7fe]/10 blur-[40px] pointer-events-none"></div>
+          {/* Right Column: Embedded Presentation Video Frame */}
+          <div className="lg:col-span-5 relative w-full">
+            <div className="relative rounded-3xl bg-white/[0.03] border border-[#00e7fe]/20 p-2 shadow-2xl backdrop-blur-xl group overflow-hidden">
+              
+              {/* Efeito Glow neon atrás da caixa do vídeo */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#00e7fe]/15 blur-[50px] pointer-events-none"></div>
 
-              {/* SLA Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 bg-[#00e7fe]/20 rounded-2xl flex items-center justify-center text-[#00e7fe] border border-[#00e7fe]/30">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div className="text-right">
-                  <div className="text-[11px] text-slate-500 uppercase tracking-widest font-semibold">SLA de Entrega</div>
-                  <div className="text-3xl sm:text-4xl font-black text-[#10B981]">98.7%</div>
-                </div>
-              </div>
+              <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/10">
+                
+                {!isPlaying ? (
+                  /* Capa/Thumbnail e Botão Play */
+                  <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
+                    <img 
+                      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" 
+                      alt="Apresentação Nobres Entregas" 
+                      className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-500"
+                    />
+                    
+                    {/* Botão Play Neon */}
+                    <button
+                      onClick={() => setIsPlaying(true)}
+                      className="absolute w-16 h-16 rounded-full bg-gradient-to-r from-[#00e7fe] to-[#008ef4] text-black flex items-center justify-center shadow-[0_0_25px_rgba(0,231,254,0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer group/btn"
+                      aria-label="Tocar Vídeo de Apresentação"
+                    >
+                      <Play className="w-7 h-7 fill-current ml-1 text-black" />
+                    </button>
 
-              {/* Status rows */}
-              <div className="space-y-3 mb-5">
-                <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-xs sm:text-sm text-slate-300 font-medium">Reputação nos Marketplaces</span>
-                  <span className="text-xs font-bold text-[#10B981] px-2.5 py-0.5 bg-[#10B981]/10 rounded-full border border-[#10B981]/20">
-                    100% PROTEGIDA
-                  </span>
-                </div>
+                    <div className="absolute bottom-3 left-3 right-3 px-3.5 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-xs text-white font-medium flex items-center justify-between">
+                      <span>Conheça a operação Nobres Entregas</span>
+                      <span className="text-[#00e7fe] font-bold">1:30 min</span>
+                    </div>
+                  </div>
+                ) : (
+                  /* Player de Vídeo Local (MP4) ou Iframe */
+                  <video 
+                    controls 
+                    autoPlay 
+                    className="w-full h-full object-cover"
+                    src="/videos/apresentacao.mp4"
+                  >
+                    Seu navegador não suporta a exibição deste vídeo.
+                  </video>
 
-                <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-xs sm:text-sm text-slate-300 font-medium">Área de Atuação Flex</span>
-                  <span className="text-xs font-bold text-white">São Paulo, ABC & Região</span>
-                </div>
-              </div>
+                  /* DICA: Se for usar YouTube, remova a tag <video> e descomente abaixo:
+                  <iframe 
+                    className="w-full h-full" 
+                    src="https://www.youtube.com/embed/SEU_ID_AQUI?autoplay=1" 
+                    title="Apresentação Nobres Entregas"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                  */
+                )}
 
-              {/* Live Mini Route Progress */}
-              <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
-                <div className="flex justify-between text-[11px] font-mono text-slate-300">
-                  <span className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#00e7fe]" /> Rotas em Execução:
-                  </span>
-                  <span className="text-[#00e7fe] font-bold">142 / 148 baixas POD</span>
-                </div>
-                <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#00e7fe] to-[#008ef4] rounded-full" style={{ width: '96%' }}></div>
-                </div>
-              </div>
-
-              {/* Quick interactive trigger */}
-              <button
-                onClick={onOpenQuoteModal}
-                className="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-[#00e7fe]/10 text-cyan-300 hover:text-cyan-200 font-semibold text-xs border border-[#00e7fe]/20 hover:border-[#00e7fe]/40 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(0,231,254,0.08)]"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-[#00e7fe]" />
-                Calcular Janela de Coleta para Meu Endereço
-              </button>
-            </div>
-
-            {/* Active Sellers Banner */}
-            <div className="p-5 rounded-3xl bg-[#008ef4]/10 border border-[#008ef4]/20 backdrop-blur-md flex items-center gap-4 shadow-lg">
-              <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full border-2 border-[#070A12] bg-slate-800 flex items-center justify-center text-[10px] font-bold text-white">R.M</div>
-                <div className="w-10 h-10 rounded-full border-2 border-[#070A12] bg-slate-700 flex items-center justify-center text-[10px] font-bold text-white">C.S</div>
-                <div className="w-10 h-10 rounded-full border-2 border-[#070A12] bg-gradient-to-br from-[#00e7fe] to-[#008ef4] flex items-center justify-center text-[10px] font-black text-black">+500</div>
-              </div>
-              <div className="text-sm">
-                <span className="block font-bold text-white">Sellers de Alta Performance</span>
-                <span className="text-xs text-slate-400">Escalando com Same Day diariamente em SP</span>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -197,4 +182,3 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
     </section>
   );
 };
-
