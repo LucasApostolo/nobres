@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               rel="noopener noreferrer"
               className="hover:text-[#00e7fe] flex items-center gap-1.5 text-slate-300 transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#00e7fe]" /> (11) 99999-8888
+              <Phone className="w-3 h-3 text-[#00e7fe]" /> (11) 98022-4789
             </a>
           </div>
         </div>
