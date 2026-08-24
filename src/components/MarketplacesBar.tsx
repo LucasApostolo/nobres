@@ -34,21 +34,31 @@ export const MarketplacesBar: React.FC = () => {
                 style={{ backgroundColor: mp.iconColor }}
               />
 
-              <div className="w-full">
+              <div className="w-full flex flex-col items-center">
                 {/* Badge */}
-                <div className="flex justify-center mb-2.5">
+                <div className="flex justify-center mb-3">
                   <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white/5 text-slate-300 border border-white/10">
                     {mp.badge}
                   </span>
                 </div>
 
+                {/* Marketplace Logo */}
+                <div className="h-9 flex items-center justify-center mb-2">
+                  <img 
+                    src={mp.logo} 
+                    alt={`Logo ${mp.name}`}
+                    className="h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    loading="lazy"
+                  />
+                </div>
+
                 {/* Marketplace Name */}
-                <h3 className="text-sm font-extrabold text-white group-hover:text-[#00e7fe] transition-colors mb-1">
+                <h3 className="text-sm font-extrabold text-white group-hover:text-[#00e7fe] transition-colors mb-0.5">
                   {mp.name}
                 </h3>
                 
                 {/* Tag */}
-                <p className="text-[11px] font-medium text-slate-400 mb-2">
+                <p className="text-[11px] font-medium text-slate-400 mb-3">
                   {mp.tag}
                 </p>
               </div>
@@ -79,4 +89,3 @@ export const MarketplacesBar: React.FC = () => {
     </section>
   );
 };
-
