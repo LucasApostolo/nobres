@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <span>(11) 99999-8888</span>
+                <span>(11) 98022-4789</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#00e7fe] shrink-0" />
