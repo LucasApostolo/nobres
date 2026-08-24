@@ -6,21 +6,21 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
   switch (id) {
     case 'mercadolivre':
       return (
-        <div className="flex items-center justify-center h-full w-full">
+        <div className="flex items-center justify-center w-full h-full overflow-visible">
           <img 
             src="/logos/mercadolivre.png" 
             alt="Mercado Livre" 
-            className="h-10 sm:h-11 w-auto object-contain" 
+            className="h-16 w-auto max-w-none object-contain scale-[1.8] sm:scale-[2.0]" 
           />
         </div>
       );
     case 'shopee':
       return (
-        <div className="flex items-center justify-center h-full w-full">
+        <div className="flex items-center justify-center w-full h-full overflow-visible">
           <img 
             src="/logos/shopee.png" 
             alt="Shopee" 
-            className="h-10 sm:h-11 w-auto object-contain" 
+            className="h-14 w-auto max-w-none object-contain scale-[1.6] sm:scale-[1.8]" 
           />
         </div>
       );
@@ -44,7 +44,7 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
     case 'shopify':
       return (
         <div className="flex items-center justify-center gap-2">
-          {/* Logo Oficial Shopify com o contraste correto para fundo escuro */}
+          {/* Logo Oficial Shopify */}
           <svg className="h-7 w-auto fill-[#95BF47]" viewBox="0 0 24 24">
             <path d="M21.2 5.1s-1.8-.4-3.1-.4c-1.1 0-1.8.4-2.1.6L19.4 19l3.4-1.1-1.6-12.8z"/>
             <path d="M16.3 3.3c-.1 0-.8 0-1.8.3-.9-.6-1.9-.9-2.8-.9-2.7 0-4.2 1.6-4.2 3.1 0 2.2 3.2 2.8 3.2 4.2 0 .6-.5.9-1.1.9-.9 0-1.6-.4-2.1-.8l-.6 1.5c.7.5 1.7.8 2.8.8 2.5 0 4-1.4 4-3.1 0-2.3-3.2-2.7-3.2-4.2 0-.4.3-.8 1-.8.7 0 1.3.3 1.8.6l.5-1.4c-.1 0 0 0-.5-.2z"/>
@@ -75,13 +75,13 @@ export const MarketplacesBar: React.FC = () => {
           {MARKETPLACES.map((mp: Marketplace) => (
             <div
               key={mp.id}
-              className={`bg-neutral-900/90 border border-neutral-800/90 p-5 rounded-2xl flex flex-col items-center justify-between text-center transition-all duration-300 ${mp.borderColor} hover:scale-[1.02] shadow-lg`}
+              className={`bg-neutral-900/90 border border-neutral-800/90 p-5 rounded-2xl flex flex-col items-center justify-between text-center transition-all duration-300 ${mp.borderColor} hover:scale-[1.02] shadow-lg overflow-hidden`}
             >
               <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-neutral-800 text-neutral-300">
                 {mp.badge}
               </span>
 
-              <div className="my-5 h-12 flex items-center justify-center w-full">
+              <div className="my-5 h-14 flex items-center justify-center w-full overflow-visible">
                 <MarketplaceLogo id={mp.id} />
               </div>
 
