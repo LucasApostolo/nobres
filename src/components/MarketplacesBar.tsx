@@ -6,28 +6,30 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
   switch (id) {
     case 'mercadolivre':
       return (
-        <div className="flex items-center gap-2 font-bold text-yellow-400 text-lg tracking-tight">
-          <svg className="w-8 h-8 fill-current text-yellow-400" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-            <path d="M7 11.5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5V9h-7v2.5z"/>
+        <div className="flex items-center justify-center">
+          {/* Logo Oficial Mercado Livre: Aperto de Mãos dentro da elipse amarela */}
+          <svg className="h-10 w-auto" viewBox="0 0 100 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0C22.3858 0 0 15.2223 0 34C0 52.7777 22.3858 68 50 68C77.6142 68 100 52.7777 100 34C100 15.2223 77.6142 0 50 0Z" fill="#FFE600"/>
+            <path d="M68.5 24.5C66.8 22.8 64.1 22.8 62.4 24.5L52.8 34.1L48.2 29.5C46.5 27.8 43.8 27.8 42.1 29.5L30.5 41.1C28.8 42.8 28.8 45.5 30.5 47.2C32.2 48.9 34.9 48.9 36.6 47.2L45.2 38.6L49.8 43.2C51.5 44.9 54.2 44.9 55.9 43.2L68.5 30.6C70.2 28.9 70.2 26.2 68.5 24.5Z" fill="#2D3277"/>
+            <path d="M41.8 38.2L36.2 32.6C34.5 30.9 31.8 30.9 30.1 32.6L27.5 35.2C25.8 36.9 25.8 39.6 27.5 41.3L36.1 49.9C37.8 51.6 40.5 51.6 42.2 49.9L44.8 47.3C46.5 45.6 46.5 42.9 44.8 41.2L41.8 38.2Z" fill="#2D3277"/>
           </svg>
-          <span>Mercado Libre</span>
         </div>
       );
     case 'shopee':
       return (
-        <div className="flex items-center gap-2 font-bold text-orange-500 text-lg tracking-tight">
-          <svg className="w-7 h-7 fill-current text-orange-500" viewBox="0 0 24 24">
-            <path d="M19 6h-3.17c-.42-1.16-1.52-2-2.83-2s-2.41.84-2.83 2H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 15H7V8h2v1c0 .55.45 1 1 1s1-.45 1-1V8h2v1c0 .55.45 1 1 1s1-.45 1-1V8h2v11z"/>
+        <div className="flex items-center justify-center gap-2">
+          {/* Sacola Oficial Shopee */}
+          <svg className="w-8 h-8 text-[#EE4D2D] fill-current" viewBox="0 0 24 24">
+            <path d="M19.35 6.04h-3.23a4.12 4.12 0 0 0-8.24 0H4.65A1.65 1.65 0 0 0 3 7.69l.86 12.1A2.48 2.48 0 0 0 6.34 22h11.32a2.48 2.48 0 0 0 2.48-2.21l.86-12.1a1.65 1.65 0 0 0-1.65-1.65ZM12 3.5a2.47 2.47 0 0 1 2.47 2.54H9.53A2.47 2.47 0 0 1 12 3.5Zm-2.8 11.23c0-.8.64-1.35 1.83-1.64l1.24-.3c1.3-.31 1.88-.78 1.88-1.57 0-.97-.93-1.55-2.22-1.55-1.37 0-2.31.67-2.37 1.73H7.83c.08-2.02 1.8-3.15 4.11-3.15 2.41 0 4.02 1.2 4.02 3.01 0 1.54-.95 2.27-2.67 2.68l-1.12.27c-1.01.24-1.42.6-1.42 1.22 0 .76.82 1.3 2.12 1.3 1.48 0 2.41-.62 2.53-1.74h1.72c-.11 2.08-1.77 3.22-4.22 3.22-2.58 0-4.28-1.28-4.28-3.18Z" />
           </svg>
-          <span>Shopee</span>
+          <span className="font-extrabold text-2xl text-[#EE4D2D] tracking-tight">Shopee</span>
         </div>
       );
     case 'amazon':
       return (
-        <div className="flex flex-col items-center justify-center text-white">
-          <span className="font-extrabold text-xl tracking-tighter leading-none">amazon</span>
-          <svg className="w-12 h-3 text-amber-500 fill-current -mt-0.5" viewBox="0 0 50 12">
+        <div className="flex flex-col items-center justify-center">
+          <span className="font-extrabold text-2xl text-white tracking-tighter leading-none">amazon</span>
+          <svg className="w-14 h-3.5 text-amber-500 fill-current -mt-0.5" viewBox="0 0 50 12">
             <path d="M1 8c12 4 28 4 42-3 1-1 2 1 1 2-13 8-30 8-44 2 0-1 0-1 1-1z"/>
             <path d="M41 4l5 3-2 4c0 0-1-4-3-7z"/>
           </svg>
@@ -36,17 +38,20 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
     case 'magalu':
       return (
         <div className="flex flex-col items-center justify-center">
-          <span className="font-black text-xl text-blue-500 tracking-tight lowercase">magalu</span>
-          <div className="h-1 w-12 bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-400 rounded-full mt-0.5"></div>
+          <span className="font-black text-2xl text-blue-500 tracking-tight lowercase">magalu</span>
+          <div className="h-1 w-14 bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-400 rounded-full mt-0.5"></div>
         </div>
       );
     case 'shopify':
       return (
-        <div className="flex items-center gap-2 font-bold text-lime-400 text-lg tracking-tight">
-          <svg className="w-7 h-7 fill-current text-lime-400" viewBox="0 0 24 24">
-            <path d="M16 6h-2c0-2.21-1.79-4-4-4S6 3.79 6 6H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 15H4V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h6v2c0 .55.45 1 1 1s1-.45 1-1V8h2v11z"/>
+        <div className="flex items-center justify-center gap-2">
+          {/* Sacola Oficial Shopify com o S verde */}
+          <svg className="w-8 h-8 text-[#95BF47] fill-current" viewBox="0 0 24 24">
+            <path d="M15.34 3.26a.5.5 0 0 0-.48-.33c-.04 0-.82.02-1.8.27-.92-.62-1.92-.85-2.8-.85-2.73 0-4.22 1.63-4.22 3.1 0 2.22 3.2 2.76 3.2 4.18 0 .58-.45.92-1.12.92-.86 0-1.63-.44-2.12-.8l-.58 1.48c.67.5 1.68.85 2.78.85 2.45 0 4.02-1.37 4.02-3.12 0-2.33-3.21-2.72-3.21-4.2 0-.42.34-.78.96-.78.68 0 1.34.25 1.83.56l.54-1.36Z"/>
+            <path d="M20.2 6.55s-1.8-.38-3.08-.38c-1.14 0-1.78.36-2.07.62l3.43 12.27 3.42-1.07-1.7-11.44Z"/>
+            <path d="M4.3 8.35 2 18.25l13.52 2.78L13.88 7.3s-.9-.4-1.87-.4c-1.12 0-2.13.38-2.13.38L8.6 4.12 4.3 8.35Z"/>
           </svg>
-          <span>Shopify</span>
+          <span className="font-bold text-xl text-[#95BF47] tracking-tight">shopify</span>
         </div>
       );
     default:
@@ -77,7 +82,7 @@ export const MarketplacesBar: React.FC = () => {
                 {mp.badge}
               </span>
 
-              <div className="my-5 h-10 flex items-center justify-center w-full">
+              <div className="my-5 h-12 flex items-center justify-center w-full">
                 <MarketplaceLogo id={mp.id} />
               </div>
 
