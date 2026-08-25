@@ -59,7 +59,7 @@ export const MARKETPLACES: Marketplace[] = [
   {
     id: 'shopee',
     name: 'Shopee Direta & Flex',
-    tag: 'Shopee Same Day',
+    tag: 'Shopee Entrega Diretay',
     description: 'Cumprimento rigoroso da janela de envio',
     badge: 'Vendedor Indicado',
     borderColor: 'hover:border-orange-500/50'
@@ -67,7 +67,7 @@ export const MARKETPLACES: Marketplace[] = [
   {
     id: 'amazon',
     name: 'Amazon Flex',
-    tag: 'Amazon Prime Same Day',
+    tag: 'Amazon Self-Delivery',
     description: 'Agilidade máxima nos envios prioritários SP',
     badge: 'Padrão Prime',
     borderColor: 'hover:border-amber-500/50'
@@ -75,7 +75,7 @@ export const MARKETPLACES: Marketplace[] = [
   {
     id: 'magalu',
     name: 'Magalu Entregas',
-    tag: 'Magalu Same Day',
+    tag: 'Magalu VAPT',
     description: 'Retiradas pontuais e baixa imediata de pacotes',
     badge: 'Alta Performance',
     borderColor: 'hover:border-blue-500/50'
@@ -83,7 +83,7 @@ export const MARKETPLACES: Marketplace[] = [
   {
     id: 'shopify',
     name: 'E-commerce Próprio & Shopify',
-    tag: 'Direct-to-Consumer',
+    tag: 'Vendas E-commerce',
     description: 'Same Day Delivery para sua loja virtual ou WhatsApp',
     badge: 'VIP Express',
     borderColor: 'hover:border-lime-500/50'
