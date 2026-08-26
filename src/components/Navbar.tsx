@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
 
           <div className="hidden md:flex items-center space-x-4 text-xs text-slate-400">
             <span className="flex items-center gap-1.5 text-[#00e7fe]">
-              <ShieldCheck className="w-3.5 h-3.5" /> Reputação Verde Protegida (99.4%)
+              <ShieldCheck className="w-3.5 h-3.5" /> Reputação Verde Protegida (98.7%)
             </span>
             <span className="text-white/10">|</span>
             <a 
