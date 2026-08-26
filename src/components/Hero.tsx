@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { 
   ShieldCheck, 
   ArrowRight, 
-  Clock, 
   CheckCircle2, 
   TrendingUp, 
   Award,
@@ -29,23 +28,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
           {/* Left Column: Copywriting & High Conversion CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Live Operational Status Badge (SEO Geográfico) */}
+            {/* Live Operational Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-[11px] font-bold uppercase tracking-wider mb-6">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
               <span>Status: Coletas e Entregas Same Day em São Paulo e Grande SP</span>
             </div>
 
-            {/* Main Headline (Otimizada com Termos Exatos para SEO) */}
+            {/* 1ª e 2ª Alteração: Main Headline (H1 Otimizado para SEO e Foco) */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-tight text-white mb-6">
-              Transportadora para <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Envios Flex</span> e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Shopee Entrega Direta</span> em SP
+              Transportadora para <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Mercado Livre Envios Flex</span> e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Shopee Entrega Direta</span> em São Paulo
             </h1>
 
-            {/* Subtítulo de Alta Conversão */}
+            {/* Descrição Otimizada (Onde, Como e Especialidade) */}
             <p className="text-base sm:text-lg text-slate-400 font-normal leading-relaxed mb-8 max-w-2xl">
-              Sua operação sem atrasos e sem falhas. Coletas diárias no seu CD ou loja com entregas no mesmo dia (Same Day). Proteja sua reputação no Mercado Livre, Shopee, Amazon e Magalu com a logística da <strong className="text-white font-medium">Nobres Entregas</strong>.
+              Coletas diárias no seu CD, loja ou operação, com entregas no mesmo dia em São Paulo e Grande São Paulo. A <strong className="text-white font-medium">Nobres Entregas</strong> é especializada em Mercado Livre Envios Flex e Shopee Entrega Direta, oferecendo mais agilidade e controle para sua operação.
             </p>
 
-            {/* Quick Guarantees Pill Tags */}
+            {/* Quick Guarantees Pill Tags (Ponto focal para a 5ª alteração) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full mb-8">
               <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
@@ -61,26 +60,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               </div>
             </div>
 
-            {/* Action CTAs */}
+            {/* 3ª e 4ª Alteração: Action CTAs com Hierarquia Clara */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              {/* Botão Principal: Quero Cotar Minha Operação */}
               <a
                 href={buildWhatsAppLink({
-                  message: 'Gostaria de otimizar os Envios Flex da minha loja e conhecer a janela de coleta.'
+                  message: 'Olá! Gostaria de cotar minha operação para Mercado Livre Envios Flex e Shopee Entrega Direta.'
                 })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-[#00e7fe] to-[#008ef4] rounded-xl text-black font-bold text-base hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(0,142,244,0.3)] active:scale-[0.98]"
               >
-                <span>Otimizar Meus Envios Flex</span>
+                <span>Quero Cotar Minha Operação</span>
                 <ArrowRight className="w-5 h-5 text-black stroke-[2.5]" />
               </a>
 
+              {/* Botão Secundário: Como Funciona a Coleta */}
               <a
                 href="#passo-a-passo"
                 className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-semibold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm"
               >
-                <span>Como funciona a coleta</span>
-                <Clock className="w-4 h-4 text-[#00e7fe]" />
+                <span>Como Funciona a Coleta</span>
+                <ArrowRight className="w-4 h-4 text-slate-400" />
               </a>
             </div>
 
@@ -123,21 +124,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
           <div className="lg:col-span-5 relative w-full">
             <div className="relative rounded-3xl bg-white/[0.03] border border-[#00e7fe]/20 p-2 shadow-2xl backdrop-blur-xl group overflow-hidden">
               
-              {/* Efeito Glow neon atrás da caixa do vídeo */}
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#00e7fe]/15 blur-[50px] pointer-events-none"></div>
 
               <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/10">
                 
                 {!isPlaying ? (
-                  /* Capa/Thumbnail e Botão Play */
                   <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
                     <img 
                       src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Apresentação Nobres Entregas - Envios Flex e Shopee Entrega Direta em SP" 
+                      alt="Apresentação Nobres Entregas - Mercado Livre Envios Flex e Shopee Entrega Direta" 
                       className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-500"
                     />
                     
-                    {/* Botão Play Neon */}
                     <button
                       onClick={() => setIsPlaying(true)}
                       className="absolute w-16 h-16 rounded-full bg-gradient-to-r from-[#00e7fe] to-[#008ef4] text-black flex items-center justify-center shadow-[0_0_25px_rgba(0,231,254,0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer group/btn"
@@ -152,7 +150,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                     </div>
                   </div>
                 ) : (
-                  /* Player de Vídeo Local (MP4) */
                   <video 
                     controls 
                     autoPlay 
