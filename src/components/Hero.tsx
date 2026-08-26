@@ -29,20 +29,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
           {/* Left Column: Copywriting & High Conversion CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Live Operational Status Badge */}
+            {/* Live Operational Status Badge (SEO Geográfico) */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-[11px] font-bold uppercase tracking-wider mb-6">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
-              <span>Status: Coletas e Entregas em Andamento SP</span>
+              <span>Status: Coletas e Entregas Same Day em São Paulo e Grande SP</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline (Otimizada com Termos Exatos para SEO) */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-tight text-white mb-6">
-              Sua operação <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Flex</span> sem atrasos e sem falhas.
+              Transportadora para <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Envios Flex</span> e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Shopee Entrega Direta</span> em SP
             </h1>
 
-            {/* High Conversion Subtitle */}
+            {/* Subtítulo de Alta Conversão */}
             <p className="text-base sm:text-lg text-slate-400 font-normal leading-relaxed mb-8 max-w-2xl">
-              Coletas diárias no seu CD com entrega no mesmo dia. Proteja sua reputação no Mercado Livre, Shopee, Amazon e Magalu com a logística premium da <strong className="text-white font-medium">Nobres Entregas</strong>.
+              Sua operação sem atrasos e sem falhas. Coletas diárias no seu CD ou loja com entregas no mesmo dia (Same Day). Proteja sua reputação no Mercado Livre, Shopee, Amazon e Magalu com a logística da <strong className="text-white font-medium">Nobres Entregas</strong>.
             </p>
 
             {/* Quick Guarantees Pill Tags */}
@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <a
                 href={buildWhatsAppLink({
-                  message: 'Gostaria de otimizar os envios Flex da minha loja e conhecer a janela de coleta.'
+                  message: 'Gostaria de otimizar os Envios Flex da minha loja e conhecer a janela de coleta.'
                 })}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -133,7 +133,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                   <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
                     <img 
                       src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Apresentação Nobres Entregas" 
+                      alt="Apresentação Nobres Entregas - Envios Flex e Shopee Entrega Direta em SP" 
                       className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-500"
                     />
                     
@@ -148,11 +148,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
 
                     <div className="absolute bottom-3 left-3 right-3 px-3.5 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-xs text-white font-medium flex items-center justify-between">
                       <span>Conheça a operação Nobres Entregas</span>
-                      <span className="text-[#00e7fe] font-bold">1:30 min</span>
+                      <span className="text-[#00e7fe] font-bold">0:18 min</span>
                     </div>
                   </div>
                 ) : (
-                  /* Player de Vídeo Local (MP4) ou Iframe */
+                  /* Player de Vídeo Local (MP4) */
                   <video 
                     controls 
                     autoPlay 
@@ -161,16 +161,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                   >
                     Seu navegador não suporta a exibição deste vídeo.
                   </video>
-
-                  /* DICA: Se for usar YouTube, remova a tag <video> e descomente abaixo:
-                  <iframe 
-                    className="w-full h-full" 
-                    src="https://www.youtube.com/embed/SEU_ID_AQUI?autoplay=1" 
-                    title="Apresentação Nobres Entregas"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
-                  */
                 )}
 
               </div>
