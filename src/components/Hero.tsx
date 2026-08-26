@@ -131,9 +131,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                 {!isPlaying ? (
                   <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
                     <img 
-                      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" 
+                      src="/logos/cover-meli-shopee.png" 
                       alt="Apresentação Nobres Entregas - Mercado Livre Envios Flex e Shopee Entrega Direta" 
-                      className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
                     />
                     
                     <button
