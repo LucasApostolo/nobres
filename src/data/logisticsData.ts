@@ -59,7 +59,7 @@ export const MARKETPLACES: Marketplace[] = [
   {
     id: 'shopee',
     name: 'Shopee Direta & Flex',
-    tag: 'Shopee Entrega Diretay',
+    tag: 'Shopee Entrega Direta',
     description: 'Cumprimento rigoroso da janela de envio',
     badge: 'Vendedor Indicado',
     borderColor: 'hover:border-orange-500/50'
