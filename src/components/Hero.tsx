@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               <span>Status: Coletas e Entregas Same Day em São Paulo e Grande SP</span>
             </div>
 
-            {/* 1ª e 2ª Alteração: Main Headline (H1 Otimizado para SEO e Foco) */}
+            {/* Main Headline (H1 Otimizado para SEO e Foco) */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-tight text-white mb-6">
               Transportadora para <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Mercado Livre Envios Flex</span> e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Shopee Entrega Direta</span> em São Paulo
             </h1>
@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               Coletas diárias no seu CD, loja ou operação, com entregas no mesmo dia em São Paulo e Grande São Paulo. A <strong className="text-white font-medium">Nobres Entregas</strong> é especializada em Mercado Livre Envios Flex e Shopee Entrega Direta, oferecendo mais agilidade e controle para sua operação.
             </p>
 
-            {/* Quick Guarantees Pill Tags (Ponto focal para a 5ª alteração) */}
+            {/* Quick Guarantees Pill Tags */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full mb-8">
               <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               </div>
             </div>
 
-            {/* 3ª e 4ª Alteração: Action CTAs com Hierarquia Clara */}
+            {/* Action CTAs com Hierarquia Clara */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               {/* Botão Principal: Quero Cotar Minha Operação */}
               <a
