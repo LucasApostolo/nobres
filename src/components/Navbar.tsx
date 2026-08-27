@@ -18,13 +18,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lista encurtada de links para dar respiro ao layout
+  // Links com /# para funcionar tanto na Home quanto na pagina do Mercado Livre Flex
   const navLinks = [
-    { label: 'Soluções', href: '#servicos' },
-    { label: 'Comparativo', href: '#comparativo' },
-    { label: 'Simulador', href: '#simulador' },
-    { label: 'Cobertura', href: '#cobertura' },
-    { label: 'Dúvidas', href: '#faq' },
+    { label: 'Soluções', href: '/#servicos' },
+    { label: 'Comparativo', href: '/#comparativo' },
+    { label: 'Simulador', href: '/#simulador' },
+    { label: 'Cobertura', href: '/#cobertura' },
+    { label: 'Dúvidas', href: '/#faq' },
   ];
 
   return (
@@ -70,8 +70,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo Oficial com Fallback */}
-            <a href="#inicio" className="flex items-center gap-3 group">
+            {/* Logo Oficial com Link para o Início da Home */}
+            <a href="/#inicio" className="flex items-center gap-3 group">
               <img 
                 src="/logos/nobres.png" 
                 alt="Nobres Entregas Flex" 
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               </div>
             </a>
 
-            {/* Desktop Navigation Links (Limpo e Encurtado) */}
+            {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center space-x-1 xl:space-x-3">
               {navLinks.map((link) => (
                 <a
