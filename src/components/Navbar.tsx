@@ -18,7 +18,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Links com /# para funcionar tanto na Home quanto na pagina do Mercado Livre Flex
   const navLinks = [
     { label: 'Soluções', href: '/#servicos' },
     { label: 'Comparativo', href: '/#comparativo' },
@@ -28,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   ];
 
   return (
-    <>
+    <div className="fixed top-0 left-0 right-0 z-50">
       {/* Top operational announcement ticker */}
       <div className="bg-[#070A12] border-b border-white/5 py-2 px-4 text-xs font-medium text-slate-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -61,16 +60,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
 
       {/* Main Navbar */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           isScrolled
             ? 'bg-[#070A12]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/80 py-3'
-            : 'bg-[#070A12]/70 backdrop-blur-md border-b border-white/5 py-4'
+            : 'bg-[#070A12]/70 backdrop-blur-md border-b border-white/5 py-3'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo Oficial com Link para o Início da Home */}
+            {/* Logo Oficial */}
             <a href="/#inicio" className="flex items-center gap-3 group">
               <img 
                 src="/logos/nobres.png" 
@@ -177,6 +176,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
           </div>
         )}
       </header>
-    </>
+    </div>
   );
 };
