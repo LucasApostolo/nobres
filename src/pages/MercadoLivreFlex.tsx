@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Clock, CheckCircle2, ArrowRight, Truck, Award, Plus, Minus, BookOpenText } from 'lucide-react';
+import { 
+  ShieldCheck, 
+  Clock, 
+  CheckCircle2, 
+  ArrowRight, 
+  Truck, 
+  Award, 
+  Plus, 
+  Minus, 
+  BookOpenText, 
+  MapPin, 
+  DollarSign, 
+  Settings, 
+  FileCheck 
+} from 'lucide-react';
 
 // Dados simulados para a seção de FAQ
 const flexFaq = [
@@ -9,11 +23,11 @@ const flexFaq = [
   },
   {
     question: "Vocês atendem todas as faixas de CEP de São Paulo?",
-    answer: "Atendemos a maioria das faixas de CEP configuráveis no painel Mercado Livre Flex de SP e Grande SP. No momento da cotação, validamos sua lista de CEPs para garantir 100% de cobertura operacional."
+    answer: "Atendemos a maioria das faixas de CEP configuráveis no painel Mercado Livre Flex de SP, ABC e Guarulhos. No momento da cotação, validamos sua lista de CEPs para garantir 100% de cobertura operacional."
   },
   {
     question: "Como funciona a bipagem e a baixa no Mercado Livre?",
-    answer: "Nobres Entregas Flex é parceira homologada. Nossos entregadores utilizam um app integrado à API do Mercado Livre. O escaneamento da etiqueta é feito no ato da entrega presencial, garantindo baixa em tempo real e prova de entrega robusta."
+    answer: "A Nobres Entregas Flex opera com aplicativo próprio integrado às diretrizes do Mercado Livre. O escaneamento da etiqueta é feito no ato da entrega presencial, garantindo baixa em tempo real e prova de entrega robusta."
   }
 ];
 
@@ -47,7 +61,7 @@ export const MercadoLivreFlex: React.FC = () => {
         </h1>
         
         <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed font-normal">
-          Operação logística de alta precisão em São Paulo e Grande SP. Bipagem na entrega, atualização imediata e <strong className="text-white font-semibold">SLA de 99,4% garantido</strong> para manter o selo verde no seu painel Meli.
+          Operação logística de alta precisão em São Paulo e Grande SP. Bipagem na entrega, atualização imediata e <strong className="text-white font-semibold">SLA de 98,7% garantido</strong> para manter o selo verde no seu painel Meli.
         </p>
 
         {/* Badges Rápidos de Confiança */}
@@ -72,9 +86,93 @@ export const MercadoLivreFlex: React.FC = () => {
           >
             Cotar Operação Envios Flex <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </a>
-          <button className="inline-flex items-center justify-center px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-medium bg-slate-900 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all text-sm sm:text-base">
-            <BookOpenText className="mr-2 w-4 h-4 sm:w-5 sm:h-5 text-slate-400" /> Guia Rápido de Expedição Meli Flex
-          </button>
+          <a 
+            href="#cluster-hub"
+            className="inline-flex items-center justify-center px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-medium bg-slate-900 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all text-sm sm:text-base"
+          >
+            <BookOpenText className="mr-2 w-4 h-4 sm:w-5 sm:h-5 text-slate-400" /> Guia Rápido & Tópicos do Flex
+          </a>
+        </div>
+      </section>
+
+      {/* BLOCO: TOPIC CLUSTER HUB */}
+      <section id="cluster-hub" className="max-w-6xl mx-auto py-10 relative z-10">
+        <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-bold text-[#00e7fe] uppercase tracking-wider bg-[#00e7fe]/10 px-3 py-1 rounded-full border border-[#00e7fe]/20">
+              Guia Completo de Operação
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-3">
+              Aprofunde no Ecossistema Mercado Livre Flex
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-400 mt-2">
+              Explore cada etapa da logística Same Day para extrair o máximo do seu e-commerce.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            {/* Link 1: Regiões Atendidas */}
+            <a 
+              href="/mercado-livre-envios-flex/regioes-atendidas" 
+              className="p-5 rounded-2xl bg-slate-950 border border-slate-800 hover:border-[#00e7fe] transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <MapPin className="w-6 h-6 text-[#00e7fe] mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="text-sm font-bold text-white mb-1">Regiões e CEPs Atendidos</h3>
+                <p className="text-xs text-slate-400">Consulte os bairros de SP, ABC e Guarulhos com rotas ativas.</p>
+              </div>
+              <span className="text-xs font-bold text-[#00e7fe] mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Ver Mapa de CEPs →
+              </span>
+            </a>
+
+            {/* Link 2: Tabela e Custos */}
+            <a 
+              href="/mercado-livre-envios-flex/quanto-custa" 
+              className="p-5 rounded-2xl bg-slate-950 border border-slate-800 hover:border-[#00e7fe] transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <DollarSign className="w-6 h-6 text-[#00e7fe] mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="text-sm font-bold text-white mb-1">Quanto Custa o Flex?</h3>
+                <p className="text-xs text-slate-400">Entenda os repasses do Meli e custos por pacote segundo volume.</p>
+              </div>
+              <span className="text-xs font-bold text-[#00e7fe] mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Ver Simulação de Frete →
+              </span>
+            </a>
+
+            {/* Link 3: Como Ativar */}
+            <a 
+              href="/mercado-livre-envios-flex/como-ativar" 
+              className="p-5 rounded-2xl bg-slate-950 border border-slate-800 hover:border-[#00e7fe] transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <Settings className="w-6 h-6 text-[#00e7fe] mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="text-sm font-bold text-white mb-1">Como Ativar no Painel</h3>
+                <p className="text-xs text-slate-400">Passo a passo para configurar e liberar o envio Flex na sua conta.</p>
+              </div>
+              <span className="text-xs font-bold text-[#00e7fe] mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Passo a Passo →
+              </span>
+            </a>
+
+            {/* Link 4: Reputação Verde */}
+            <a 
+              href="/mercado-livre-envios-flex/reputacao-verde" 
+              className="p-5 rounded-2xl bg-slate-950 border border-slate-800 hover:border-[#00e7fe] transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <FileCheck className="w-6 h-6 text-[#00e7fe] mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="text-sm font-bold text-white mb-1">Proteção de Reputação</h3>
+                <p className="text-xs text-slate-400">Como blindar seu termômetro e manter o SLA acima de 98.7%.</p>
+              </div>
+              <span className="text-xs font-bold text-[#00e7fe] mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Blindar Reputação →
+              </span>
+            </a>
+
+          </div>
         </div>
       </section>
 
@@ -99,7 +197,7 @@ export const MercadoLivreFlex: React.FC = () => {
             </div>
             <div className="p-4 sm:p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
               <h3 className="font-semibold text-white mb-1.5 text-sm">Alta Pontuação no SLA</h3>
-              <p className="text-slate-400 text-xs">Garantimos a bipagem correta no momento da entrega, mantendo seu índice acima de 99,4%.</p>
+              <p className="text-slate-400 text-xs">Garantimos a bipagem correta no momento da entrega, mantendo seu índice de eficiência alto.</p>
             </div>
           </div>
         </div>
@@ -143,18 +241,26 @@ export const MercadoLivreFlex: React.FC = () => {
             </div>
             <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Suporte Direto via WhatsApp</h3>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Canal rápido de comunicação com o time operacional da Nobres Entregas durante todo o itinerário das rotas.
+              Canal rápido de comunicação com o time operacional da Nobres Entregas Flex durante todo o itinerário das rotas.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Tabela de Cobertura */}
+      {/* Tabela de Cobertura Resumida com Link para Página Dedicada */}
       <section className="max-w-6xl mx-auto py-8 sm:py-10 relative z-10">
         <div className="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-md">
-          <div className="mb-6 sm:mb-8 text-center sm:text-left">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Regiões Atendidas para Mercado Livre Envios Flex</h2>
-            <p className="text-slate-400 text-xs sm:text-sm">Zonas e municípios com frota dedicada e logística Same Day.</p>
+          <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Regiões Atendidas em SP e Região</h2>
+              <p className="text-slate-400 text-xs sm:text-sm">Zonas e municípios com frota dedicada e logística Same Day.</p>
+            </div>
+            <a 
+              href="/mercado-livre-envios-flex/regioes-atendidas" 
+              className="text-xs font-bold text-[#00e7fe] hover:underline flex items-center gap-1 shrink-0"
+            >
+              Ver busca completa de CEPs e bairros →
+            </a>
           </div>
 
           <div className="overflow-x-auto">
