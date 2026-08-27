@@ -15,6 +15,9 @@ import { Home } from './pages/Home';
 import { MercadoLivreFlex } from './pages/MercadoLivreFlex';
 import { ShopeeDireta } from './pages/ShopeeDireta';
 
+// Cluster Pages
+import { RegioesAtendidasFlex } from './pages/cluster/RegioesAtendidasFlex';
+
 export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
@@ -35,6 +38,13 @@ export default function App() {
             path="/mercado-livre-envios-flex" 
             element={<MercadoLivreFlex />} 
           />
+          
+          {/* Subpágina do Topic Cluster do Flex */}
+          <Route 
+            path="/mercado-livre-envios-flex/regioes-atendidas" 
+            element={<RegioesAtendidasFlex />} 
+          />
+
           <Route 
             path="/shopee-entrega-direta" 
             element={<ShopeeDireta />} 
