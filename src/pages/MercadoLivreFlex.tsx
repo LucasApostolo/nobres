@@ -1,18 +1,41 @@
-import React from 'react';
-import { ShieldCheck, Clock, CheckCircle2, ArrowRight, Truck, Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Clock, CheckCircle2, ArrowRight, Truck, Award, Plus, Minus, BookOpenText } from 'lucide-react';
+
+// Dados simulados para a seção de FAQ - ajuda a prender o usuário
+const flexFaq = [
+  {
+    question: "O que acontece se o cliente não estiver em casa?",
+    answer: "Nossos entregadores fazem uma tentativa de contato e, se autorizado, podem entregar a um vizinho ou portaria, registrando o nome e documento. Se não for possível, realizamos uma reentrega sem custo adicional na rota do dia seguinte, para não impactar seu SLA."
+  },
+  {
+    question: "Vocês atendem todas as faixas de CEP de São Paulo?",
+    answer: "Atendemos a maioria das faixas de CEP configuráveis no painel Mercado Livre Flex de SP e Grande SP. No momento da cotação, validamos sua lista de CEPs para garantir 100% de cobertura operacional."
+  },
+  {
+    question: "Como funciona a bipagem e a baixa no Mercado Livre?",
+    answer: "Nobres Entregas Flex é parceira homologada. Nossos entregadores utilizam um app integrado à API do Mercado Livre. O escaneamento da etiqueta é feito no ato da entrega presencial, garantindo baixa em tempo real e prova de entrega robusta."
+  }
+];
 
 export const MercadoLivreFlex: React.FC = () => {
   const whatsappUrl = "https://wa.me/5511964402156?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Nobres%20Entregas%20Flex%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20para%20minha%20opera%C3%A7%C3%A3o%20Mercado%20Livre%20Envios%20Flex.";
+  
+  // Estado para controlar o FAQ accordion
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100 pt-28 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <main className="min-h-screen bg-slate-950 text-slate-100 pt-20 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       
-      {/* Luzes de Fundo (Glow Effects) para quebrar o fundo escuro plano */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-amber-500/15 via-orange-500/5 to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-amber-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 -left-20 w-96 h-96 bg-orange-600/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* Luzes de Fundo (Glow Effects) - Reduzidas para maior elegibilidade */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] bg-gradient-to-b from-amber-500/10 via-orange-500/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -right-20 w-80 h-80 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 -left-20 w-80 h-80 bg-orange-600/5 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Hero Section */}
+      {/* Hero Section - Conteúdo ajustado para cima */}
       <section className="max-w-5xl mx-auto text-center py-12 relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold mb-6 backdrop-blur-md shadow-lg shadow-amber-500/5">
           <Award className="w-4 h-4 text-amber-400" /> Especialistas em Mercado Livre Envios Flex SP
@@ -48,14 +71,44 @@ export const MercadoLivreFlex: React.FC = () => {
           >
             Cotar Operação Envios Flex <ArrowRight className="ml-2 w-5 h-5" />
           </a>
+          <button className="inline-flex items-center justify-center px-6 py-4 rounded-xl font-medium bg-slate-900 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all text-base">
+            <BookOpenText className="mr-2 w-5 h-5 text-slate-400" /> Guia Rápido de Expedição Meli Flex
+          </button>
         </div>
       </section>
 
-      {/* Cards de Diferenciais */}
+      {/* NOVO: Seção de Valor - Linkando Logística à Reputação (Mais atraente) */}
+      <section className="max-w-6xl mx-auto py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-slate-900/50 p-10 rounded-3xl border border-slate-800/80 backdrop-blur-sm shadow-xl">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold backdrop-blur-md">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Essencial para a Medalha Ouro e Líder
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+              A logística Flex é o motor da sua reputação no Mercado Livre.
+            </h2>
+            <p className="text-slate-300 text-base leading-relaxed">
+              O algoritmo do Meli prioriza anúncios com promessa de entrega Same Day. Seus atrasos podem custar sua medalha. Com a Nobres Entregas Flex, você não apenas cumpre o SLA, mas também gera avaliações positivas que aumentam sua taxa de conversão.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+              <h4 className="font-semibold text-white mb-1.5 text-sm">Menos Reclamações, Mais Vendas</h4>
+              <p className="text-slate-400 text-xs">Entregas no mesmo dia reduzem a ansiedade do comprador e a taxa de 'Onde está meu produto?'.</p>
+            </div>
+            <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+              <h4 className="font-semibold text-white mb-1.5 text-sm">Alta Pontuação no SLA</h4>
+              <p className="text-slate-400 text-xs">Garantimos a bipagem correta no momento da entrega, mantendo seu índice acima de 99,4%.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cards de Diferenciais Operacionais */}
       <section className="max-w-6xl mx-auto py-12 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
-            Por que a Nobres Entregas Flex é a parceira ideal?
+            A Nobres Entregas Flex cuida de cada etapa
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Processos operacionais alinhados às regras e métricas exigidas pelo Mercado Livre.
@@ -134,6 +187,36 @@ export const MercadoLivreFlex: React.FC = () => {
         </div>
       </section>
 
+      {/* NOVO: Seção de FAQ (Accordion) para prender o usuário */}
+      <section className="max-w-4xl mx-auto py-16 relative z-10">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-white">Dúvidas Frequentes da Operação Flex</h2>
+          <p className="text-slate-400 max-w-xl mx-auto mt-2 text-sm">Respostas diretas para as dores operacionais mais comuns dos sellers Meli.</p>
+        </div>
+        <div className="space-y-4">
+          {flexFaq.map((faq, index) => (
+            <div key={index} className="rounded-xl border border-slate-800/80 bg-slate-900/70 overflow-hidden">
+              <button 
+                onClick={() => toggleFaq(index)}
+                className="w-full flex items-center justify-between p-5 text-left hover:bg-slate-800/50 transition-colors group"
+              >
+                <h3 className="text-base font-medium text-slate-100 group-hover:text-amber-400 transition-colors">{faq.question}</h3>
+                {openFaqIndex === index ? (
+                  <Minus className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                ) : (
+                  <Plus className="w-5 h-5 text-slate-600 group-hover:text-amber-500 transition-colors flex-shrink-0" />
+                )}
+              </button>
+              {openFaqIndex === index && (
+                <div className="p-5 pt-1 border-t border-slate-800 text-sm text-slate-400 leading-relaxed bg-slate-900/90">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Banner CTA Final */}
       <section className="max-w-5xl mx-auto mt-8 p-10 rounded-3xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-slate-900 border border-amber-500/30 text-center relative z-10 shadow-2xl">
         <h2 className="text-3xl font-extrabold text-white mb-4">Pronto para otimizar suas entregas Flex?</h2>
@@ -146,7 +229,7 @@ export const MercadoLivreFlex: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shadow-lg shadow-amber-500/20 text-base"
         >
-          Falar com Nobres Entregas Flex
+          Falar com Atendimento Comercial
         </a>
       </section>
     </main>
