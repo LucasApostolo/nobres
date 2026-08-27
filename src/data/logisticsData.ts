@@ -58,7 +58,7 @@ export const MARKETPLACES: Marketplace[] = [
   },
   {
     id: 'shopee',
-    name: 'Shopee Direta & Flex',
+    name: 'Shopee Entrega Direta',
     tag: 'Shopee Entrega Direta',
     description: 'Cumprimento rigoroso da janela de envio',
     badge: 'Vendedor Indicado',
@@ -258,7 +258,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     salesIncrease: '+48% de Faturamento',
     deliveryVolume: '~180 pacotes/dia no Flex',
-    comment: 'Estávamos perdendo a medalha Platinum porque a transportadora antiga atrasava coletas e sumia com pacotes. Desde que migramos para a RouteFlex, nosso SLA está em 99.7%. O suporte no WhatsApp responde em segundos!'
+    comment: 'Estávamos perdendo a medalha Platinum porque a transportadora antiga atrasava coletas e sumia com pacotes. Desde que migramos para a Nobres, nosso SLA está em 98.7%. O suporte no WhatsApp responde em segundos!'
   },
   {
     id: '2',
@@ -282,7 +282,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     salesIncrease: '+55% no Same Day',
     deliveryVolume: '~210 pacotes/dia',
-    comment: 'Peça de carro quem compra quer para hoje. A RouteFlex nos deu a segurança de estender o horário de corte até 14h30. Nossas vendas de última hora explodiram e nunca mais tivemos reclamação de atraso.'
+    comment: 'Peça de carro quem compra quer para hoje. A Nobres Entregas nos deu a segurança de estender o horário de corte até 14h30. Nossas vendas de última hora explodiram e nunca mais tivemos reclamação de atraso.'
   }
 ];
 
