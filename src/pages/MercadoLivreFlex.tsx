@@ -1,137 +1,146 @@
 import React from 'react';
-import { ShieldCheck, Clock, MapPin, CheckCircle, ArrowRight, Truck, Award } from 'lucide-react';
+import { ShieldCheck, Clock, MapPin, CheckCircle2, ArrowRight, Truck, Award, Zap, Building2 } from 'lucide-react';
 
 export const MercadoLivreFlex: React.FC = () => {
   const whatsappUrl = "https://wa.me/5511964402156?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20cota%C3%A7%C3%A3o%20para%20minha%20opera%C3%A7%C3%A3o%20Mercado%20Livre%20Flex.";
 
   return (
-    <main className="min-h-screen bg-[#070A12] text-slate-100 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[#070A12] text-slate-100 pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      
+      {/* Luzes de Fundo (Glow Effects) para tirar o tom 'escuro plano' */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-500/15 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-yellow-500/10 blur-[100px] rounded-full pointer-events-none" />
+
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto text-center py-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-medium mb-6">
-          <Award className="w-4 h-4" /> Especialistas em Mercado Livre Flex SP
+      <section className="max-w-6xl mx-auto text-center py-12 relative z-10">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold mb-6 backdrop-blur-md shadow-lg shadow-amber-500/5">
+          <Award className="w-4 h-4 text-amber-400" /> Especialistas em Mercado Livre Flex SP
         </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
-          Entregas <span className="text-amber-400">Mercado Livre Flex</span> em São Paulo com Reputação Verde
+        
+        <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+          Entregas <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">Mercado Livre Flex</span> com Reputação Verde
         </h1>
-        <p className="text-lg text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-          Garanta SLA de 99,4% e mantenha seu indicador de entregas no prazo sempre perfeito. Coleta agilizada na Zona Norte, Centro, Sul, Leste e Oeste de SP, Guarulhos e ABC.
+        
+        <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-normal">
+          Operação logística de alta precisão em São Paulo e Grande SP. Bipagem na coleta, aviso ao destinatário e <strong className="text-white">SLA de 99,4% garantido</strong> no seu painel Meli.
         </p>
+
+        {/* Badges Rápidos de Confiança */}
+        <div className="flex flex-wrap justify-center gap-4 mb-10 text-xs sm:text-sm text-slate-300">
+          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Coleta Diária às 10h
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Tratativa de Ausência em Tempo Real
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Frota Dedicada SP, ABC e Guarulhos
+          </span>
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all transform hover:scale-105 shadow-lg shadow-amber-500/20"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-amber-500/25"
           >
             Cotar Operação Flex Agora <ArrowRight className="ml-2 w-5 h-5" />
           </a>
         </div>
       </section>
 
-      {/* Diferenciais Operacionais */}
-      <section className="max-w-6xl mx-auto py-12 border-t border-slate-800">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
-          Por que a Nobres Entregas é o parceiro ideal para seu Flex?
+      {/* Cards de Diferenciais com Visual Destacado */}
+      <section className="max-w-6xl mx-auto py-12 relative z-10">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-center mb-12 text-white">
+          Sua loja sem risco de perder o selo Flex
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <Clock className="w-10 h-10 text-amber-400 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Prazos de Corte Estendidos</h3>
-            <p className="text-slate-400 text-sm">
-              Atendemos coletas matutinas com envio garantido no mesmo dia até às 22h, permitindo maior volume de vendas diárias na sua loja.
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 border border-amber-500/20">
+              <Clock className="w-6 h-6 text-amber-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-white">Horário Limite Estendido</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Atendemos suas vendas do dia com coleta matutina garantida e entrega no mesmo dia até 22h sem atrasos.
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <ShieldCheck className="w-10 h-10 text-amber-400 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Rastreio e Baixas em Tempo Real</h3>
-            <p className="text-slate-400 text-sm">
-              Sua etiqueta é bipada na coleta e no ato da entrega com confirmação imediata no aplicativo parceiro.
+
+          <div className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 border border-amber-500/20">
+              <ShieldCheck className="w-6 h-6 text-amber-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-white">Bipagem & Baixa Imediata</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Todas as etiquetas são bipadas e sincronizadas com a API do Mercado Livre no momento da entrega ao cliente final.
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <Truck className="w-10 h-10 text-amber-400 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Frota Dedicada e Treinada</h3>
-            <p className="text-slate-400 text-sm">
-              Entregadores experientes na rotina do Meli, preparados para resolver ausências com tratativas diretas.
+
+          <div className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 border border-amber-500/20">
+              <Truck className="w-6 h-6 text-amber-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-white">Suporte Direto via WhatsApp</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Canal de comunicação dedicado entre sua equipe de expedição e nosso time operacional durante todo o percurso.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Regiões de Cobertura Flex */}
-      <section className="max-w-6xl mx-auto py-12 border-t border-slate-800">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
-          Zonas de Atendimento Mercado Livre Flex
-        </h2>
-        <p className="text-center text-slate-400 mb-8 max-w-2xl mx-auto">
-          Atendemos todas as faixas de CEP configuráveis no painel do seu Mercado Livre.
-        </p>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-slate-300 bg-slate-900/40 rounded-xl overflow-hidden border border-slate-800">
-            <thead className="bg-slate-800/80 text-amber-400 uppercase text-xs">
-              <tr>
-                <th className="py-4 px-6">Região</th>
-                <th className="py-4 px-6">Cidades / Zonas Incluídas</th>
-                <th className="py-4 px-6">Garantia SLA</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-800">
-              <tr>
-                <td className="py-4 px-6 font-semibold">Capital SP</td>
-                <td className="py-4 px-6">Zona Norte, Zona Sul, Zona Leste, Zona Oeste e Centro</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">100% No Mesmo Dia</td>
-              </tr>
-              <tr>
-                <td className="py-4 px-6 font-semibold">Grande SP</td>
-                <td className="py-4 px-6">Guarulhos, Osasco, Barueri, Carapicuíba, Taboão da Serra</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">100% No Mesmo Dia</td>
-              </tr>
-              <tr>
-                <td className="py-4 px-6 font-semibold">ABC Paulista</td>
-                <td className="py-4 px-6">Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">100% No Mesmo Dia</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* FAQ Mercado Livre Flex */}
-      <section className="max-w-4xl mx-auto py-12 border-t border-slate-800">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
-          Perguntas Frequentes sobre Logística Flex
-        </h2>
-        <div className="space-y-4">
-          <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-800">
-            <h3 className="font-semibold text-lg text-white mb-2">Qual é o horário limite de coleta na minha empresa?</h3>
-            <p className="text-slate-400 text-sm">
-              Combinamos o horário ideal de acordo com seu volume de vendas e localização. Nosso horário padrão de coleta matutina ocorre a partir das 10h.
-            </p>
+      {/* Tabela de Cobertura com Alto Contraste */}
+      <section className="max-w-6xl mx-auto py-12 relative z-10">
+        <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl">
+          <div className="mb-8 text-center sm:text-left">
+            <h2 className="text-2xl font-bold text-white mb-2">Regiões Atendidas para Meli Flex</h2>
+            <p className="text-slate-400 text-sm">Cidades e micro-regiões homologadas com frota própria para coleta e entrega.</p>
           </div>
-          <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-800">
-            <h3 className="font-semibold text-lg text-white mb-2">Como funcionam as reentradas e tentativas não entregues?</h3>
-            <p className="text-slate-400 text-sm">
-              Realizamos tratativa em tempo real. Se o destinatário estiver ausente, tentamos contato com o seller para autorizar entrega a vizinhos ou reagendamento sem prejuízo de reputação.
-            </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm text-slate-300">
+              <thead className="bg-slate-800/90 text-amber-400 uppercase text-xs">
+                <tr>
+                  <th className="py-4 px-6 rounded-l-xl">Zona / Região</th>
+                  <th className="py-4 px-6">Bairros / Cidades Principais</th>
+                  <th className="py-4 px-6 rounded-r-xl">SLA de Entrega</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60">
+                <tr className="hover:bg-slate-800/30 transition-colors">
+                  <td className="py-4 px-6 font-semibold text-white">São Paulo (Capital)</td>
+                  <td className="py-4 px-6">Zona Norte, Zona Sul, Zona Leste, Zona Oeste e Centro</td>
+                  <td className="py-4 px-6 text-emerald-400 font-bold">Mesmo Dia (Até 22h)</td>
+                </tr>
+                <tr className="hover:bg-slate-800/30 transition-colors">
+                  <td className="py-4 px-6 font-semibold text-white">ABC Paulista</td>
+                  <td className="py-4 px-6">Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema</td>
+                  <td className="py-4 px-6 text-emerald-400 font-bold">Mesmo Dia (Até 22h)</td>
+                </tr>
+                <tr className="hover:bg-slate-800/30 transition-colors">
+                  <td className="py-4 px-6 font-semibold text-white">Grande SP / Região Oest Metropolitana</td>
+                  <td className="py-4 px-6">Guarulhos, Osasco, Barueri, Carapicuíba, Taboão da Serra</td>
+                  <td className="py-4 px-6 text-emerald-400 font-bold">Mesmo Dia (Até 22h)</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="max-w-5xl mx-auto mt-8 p-8 rounded-3xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Pronto para elevar o nível da sua operação Flex?</h2>
-        <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
-          Fale diretamente com nossa equipe de operações no WhatsApp e solicite uma tabela personalizada.
+      {/* Banner de Fechamento / CTA */}
+      <section className="max-w-5xl mx-auto mt-8 p-10 rounded-3xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-slate-900 border border-amber-500/30 text-center relative z-10 shadow-2xl">
+        <h2 className="text-3xl font-extrabold text-white mb-4">Pronto para otimizar suas entregas Flex?</h2>
+        <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-base">
+          Receba uma proposta sob medida para a metragem e volume diário do seu e-commerce em menos de 5 minutos.
         </p>
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all"
+          className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shadow-lg shadow-amber-500/20"
         >
-          Falar com Especialista Meli Flex
+          Solicitar Tabela no WhatsApp
         </a>
       </section>
     </main>
