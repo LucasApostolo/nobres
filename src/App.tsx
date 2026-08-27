@@ -15,8 +15,11 @@ import { Home } from './pages/Home';
 import { MercadoLivreFlex } from './pages/MercadoLivreFlex';
 import { ShopeeDireta } from './pages/ShopeeDireta';
 
-// Cluster Pages
+// Cluster Pages (Mercado Livre Flex)
 import { RegioesAtendidasFlex } from './pages/cluster/RegioesAtendidasFlex';
+import { QuantoCustaFlex } from './pages/cluster/QuantoCustaFlex';
+import { ComoAtivarFlex } from './pages/cluster/ComoAtivarFlex';
+import { ReputacaoVerdeFlex } from './pages/cluster/ReputacaoVerdeFlex';
 
 export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -39,10 +42,22 @@ export default function App() {
             element={<MercadoLivreFlex />} 
           />
           
-          {/* Subpágina do Topic Cluster do Flex */}
+          {/* Topic Cluster: Subpáginas do Mercado Livre Flex */}
           <Route 
             path="/mercado-livre-envios-flex/regioes-atendidas" 
             element={<RegioesAtendidasFlex />} 
+          />
+          <Route 
+            path="/mercado-livre-envios-flex/quanto-custa" 
+            element={<QuantoCustaFlex />} 
+          />
+          <Route 
+            path="/mercado-livre-envios-flex/como-ativar" 
+            element={<ComoAtivarFlex />} 
+          />
+          <Route 
+            path="/mercado-livre-envios-flex/reputacao-verde" 
+            element={<ReputacaoVerdeFlex />} 
           />
 
           <Route 
