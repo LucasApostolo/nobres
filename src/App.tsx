@@ -4,74 +4,56 @@
  */
 
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { MarketplacesBar } from './components/MarketplacesBar';
-import { PainVsSolution } from './components/PainVsSolution';
-import { ServicesSection } from './components/ServicesSection';
-import { SimulatorSection } from './components/SimulatorSection';
-import { CoverageSection } from './components/CoverageSection';
-import { StepByStep } from './components/StepByStep';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { FaqSection } from './components/FaqSection';
-import { CtaBanner } from './components/CtaBanner';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { WhatsAppModal } from './components/WhatsAppModal';
+
+// Pages
+import { Home } from './pages/Home';
+import { MercadoLivreFlex } from './pages/MercadoLivreFlex';
+import { ShopeeDireta } from './pages/ShopeeDireta';
 
 export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#070A12] text-slate-100 font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#00e7fe]/30 selection:text-[#00e7fe]">
-      
-      {/* Navbar with Sticky Blur & Operational Ticker */}
-      <Navbar onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+    <BrowserRouter>
+      <div className="min-h-screen bg-[#070A12] text-slate-100 font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#00e7fe]/30 selection:text-[#00e7fe]">
+        
+        {/* Navbar mantida globalmente para todas as páginas */}
+        <Navbar onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-      <main>
-        {/* Hero Section */}
-        <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        {/* Gerenciador de Rotas */}
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />} 
+          />
+          <Route 
+            path="/mercado-livre-envios-flex" 
+            element={<MercadoLivreFlex />} 
+          />
+          <Route 
+            path="/shopee-entrega-direta" 
+            element={<ShopeeDireta />} 
+          />
+        </Routes>
 
-        {/* Certified Marketplaces Bar */}
-        <MarketplacesBar />
+        {/* Footer mantido globalmente */}
+        <Footer />
 
-        {/* Pain vs Solution Comparison */}
-        <PainVsSolution />
+        {/* Floating WhatsApp Action Button */}
+        <FloatingWhatsApp />
 
-        {/* Services & Logistics Solutions */}
-        <ServicesSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+        {/* Interactive Quote / WhatsApp Modal */}
+        <WhatsAppModal 
+          isOpen={isQuoteModalOpen} 
+          onClose={() => setIsQuoteModalOpen(false)} 
+        />
 
-        {/* Interactive Seller Volume & ROI Simulator */}
-        <SimulatorSection />
-
-        {/* Coverage & SP Zones Explorer */}
-        <CoverageSection />
-
-        {/* Step-by-Step Logistics Flow */}
-        <StepByStep />
-
-        {/* Social Proof & Verified Seller Reviews */}
-        <TestimonialsSection />
-
-        {/* Frequently Asked Questions */}
-        <FaqSection />
-
-        {/* High Conversion Urgent CTA Banner */}
-        <CtaBanner onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
-      </main>
-
-      {/* Complete Footer */}
-      <Footer />
-
-      {/* Floating WhatsApp Action Button */}
-      <FloatingWhatsApp />
-
-      {/* Interactive Quote / WhatsApp Modal */}
-      <WhatsAppModal 
-        isOpen={isQuoteModalOpen} 
-        onClose={() => setIsQuoteModalOpen(false)} 
-      />
-
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
