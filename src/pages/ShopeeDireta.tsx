@@ -23,7 +23,7 @@ export const ShopeeDireta: React.FC = () => {
 
   const handleWhatsAppRedirect = (assunto?: string) => {
     const text = assunto 
-      ? `Olá! Gostaria de saber mais sobre a coleta da Nobres para Shopee Entrega Direta: ${assunto}`
+      ? `Olá! Gostaria de saber mais sobre a coleta da Nobres Entregas para Shopee Entrega Direta: ${assunto}`
       : `Olá! Preciso de uma cotação para coletas diárias da Shopee Entrega Direta em SP.`;
     window.open(`https://wa.me/5511980224789?text=${encodeURIComponent(text)}`, '_blank');
   };
@@ -69,7 +69,7 @@ export const ShopeeDireta: React.FC = () => {
           </div>
         </div>
 
-        {/* Destaques / Vantagens da Operação da Nobres */}
+        {/* Destaques / Vantagens da Operação Nobres Entregas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 relative overflow-hidden group hover:border-orange-500/40 transition-all">
             <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 text-orange-400">
@@ -106,7 +106,7 @@ export const ShopeeDireta: React.FC = () => {
         <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-12 mb-20 relative">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
-              Como Funciona a Coleta Shopee Direta com a RouteFlex
+              Como Funciona a Coleta Shopee Direta com a Nobres Entregas Flex
             </h2>
             <p className="text-slate-400 text-sm mb-8">
               Desenvolvemos um fluxo de trabalho ajustado às exigências do algoritmo de entregas locais da Shopee para você manter nota máxima de vendedor.
