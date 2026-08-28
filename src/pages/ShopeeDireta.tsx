@@ -25,7 +25,7 @@ export const ShopeeDireta: React.FC = () => {
     const text = assunto 
       ? `Olá! Gostaria de saber mais sobre a coleta da RouteFlex para Shopee Entrega Direta: ${assunto}`
       : `Olá! Preciso de uma cotação para coletas diárias da Shopee Entrega Direta em SP.`;
-    window.open(`https://wa.me/5511964402156?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/5511980224789?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
