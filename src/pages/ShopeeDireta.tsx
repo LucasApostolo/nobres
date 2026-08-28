@@ -18,12 +18,12 @@ export const ShopeeDireta: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'vendedores' | 'operacao'>('vendedores');
 
   useEffect(() => {
-    document.title = "Shopee Entrega Direta SP | Coletas e Entregas Same Day - RouteFlex";
+    document.title = "Shopee Entrega Direta SP | Coletas e Entregas Same Day - Nobres Entregas Flex";
   }, []);
 
   const handleWhatsAppRedirect = (assunto?: string) => {
     const text = assunto 
-      ? `Olá! Gostaria de saber mais sobre a coleta da RouteFlex para Shopee Entrega Direta: ${assunto}`
+      ? `Olá! Gostaria de saber mais sobre a coleta da Nobres para Shopee Entrega Direta: ${assunto}`
       : `Olá! Preciso de uma cotação para coletas diárias da Shopee Entrega Direta em SP.`;
     window.open(`https://wa.me/5511980224789?text=${encodeURIComponent(text)}`, '_blank');
   };
@@ -69,7 +69,7 @@ export const ShopeeDireta: React.FC = () => {
           </div>
         </div>
 
-        {/* Destaques / Vantagens da Operação RouteFlex */}
+        {/* Destaques / Vantagens da Operação da Nobres */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 relative overflow-hidden group hover:border-orange-500/40 transition-all">
             <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 text-orange-400">
@@ -213,7 +213,7 @@ export const ShopeeDireta: React.FC = () => {
           <div className="absolute top-0 right-0 w-80 h-80 bg-orange-500/10 blur-[100px] pointer-events-none rounded-full" />
           
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-            Comece a Entregar Shopee Direta com a RouteFlex
+            Comece a Entregar Shopee Direta com a Nobres Entregas Flex
           </h3>
           <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-8 leading-relaxed">
             Coletamos na sua porta às 10h da manhã e garantimos 99,4% de taxa de conclusão de entregas no mesmo dia.
