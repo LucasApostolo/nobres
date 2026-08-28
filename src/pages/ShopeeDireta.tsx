@@ -213,7 +213,7 @@ export const ShopeeDireta: React.FC = () => {
           <div className="absolute top-0 right-0 w-80 h-80 bg-orange-500/10 blur-[100px] pointer-events-none rounded-full" />
           
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-            Comece a Entregar Shopee Direta com a Nobres Entregas Flex
+            Ative o Shopee Entrega Direta com a Nobres Entregas Flex
           </h3>
           <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-8 leading-relaxed">
             Coletamos na sua porta às 10h da manhã e garantimos 99,4% de taxa de conclusão de entregas no mesmo dia.
