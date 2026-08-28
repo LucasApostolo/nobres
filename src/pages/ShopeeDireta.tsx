@@ -216,7 +216,7 @@ export const ShopeeDireta: React.FC = () => {
             Ative o Shopee Entrega Direta com a Nobres Entregas Flex
           </h3>
           <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-8 leading-relaxed">
-            Coletamos na sua porta às 10h da manhã e garantimos 99,4% de taxa de conclusão de entregas no mesmo dia.
+            Coletamos na sua porta às 10h da manhã e garantimos 98,7% de taxa de conclusão de entregas no mesmo dia.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
