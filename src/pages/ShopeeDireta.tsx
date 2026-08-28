@@ -106,7 +106,7 @@ export const ShopeeDireta: React.FC = () => {
         <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-12 mb-20 relative">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
-              Como Funciona a Coleta Shopee Direta com a Nobres Entregas Flex
+              Como Funciona a Entrega Direta da Shopee com a Nobres Entregas Flex
             </h2>
             <p className="text-slate-400 text-sm mb-8">
               Desenvolvemos um fluxo de trabalho ajustado às exigências do algoritmo de entregas locais da Shopee para você manter nota máxima de vendedor.
