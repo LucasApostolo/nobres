@@ -91,7 +91,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Trust Badges Banner */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center shadow-lg">
-            <span className="block text-xl sm:text-2xl font-black text-[#10B981] mb-0.5">99.4%</span>
+            <span className="block text-xl sm:text-2xl font-black text-[#10B981] mb-0.5">98.7%</span>
             <span className="text-xs text-slate-400 font-medium">Pontualidade no Prazo</span>
           </div>
 
