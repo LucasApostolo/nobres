@@ -110,7 +110,7 @@ export const RegioesAtendidasFlex: React.FC = () => {
             Regiões e CEPs Atendidos no <span className="text-[#00e7fe]">Mercado Livre Flex</span>
           </h1>
           <p className="mt-4 text-slate-400 text-sm sm:text-base">
-            Atendemos toda a Capital de São Paulo, Grande ABC e Guarulhos com coletas diárias a partir das 10h da manhã e taxa de entrega concluída de 99,4%.
+            Atendemos toda a Capital de São Paulo, Grande ABC e Guarulhos com coletas diárias a partir das 10h da manhã e taxa de entrega concluída de 98,7%.
           </p>
         </div>
 
