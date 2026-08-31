@@ -56,7 +56,7 @@ export const RegioesAtendidasFlex: React.FC = () => {
   const [searchResult, setSearchResult] = useState<{ status: 'idle' | 'found' | 'not_found'; item?: string }>({ status: 'idle' });
 
   useEffect(() => {
-    document.title = "Regiões e CEPs Atendidos | Mercado Livre Flex SP - RouteFlex";
+    document.title = "Regiões e CEPs Atendidos | Mercado Livre Envios Flex SP - RouteFlex";
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -95,7 +95,7 @@ export const RegioesAtendidasFlex: React.FC = () => {
         {/* Navigation Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-xs text-slate-400">
           <a href="/mercado-livre-envios-flex" className="hover:text-[#00e7fe] transition-colors flex items-center gap-1">
-            <ArrowLeft className="w-3.5 h-3.5" /> Voltar para Hub Mercado Livre Flex
+            <ArrowLeft className="w-3.5 h-3.5" /> Voltar para Hub Mercado Livre Envios Flex
           </a>
           <span>/</span>
           <span className="text-slate-200">Regiões Atendidas</span>
@@ -107,7 +107,7 @@ export const RegioesAtendidasFlex: React.FC = () => {
             <MapPin className="w-3.5 h-3.5" /> Cobertura Logística Same Day
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Regiões e CEPs Atendidos no <span className="text-[#00e7fe]">Mercado Livre Flex</span>
+            Regiões e CEPs Atendidos no <span className="text-[#00e7fe]">Mercado Livre Envios Flex</span>
           </h1>
           <p className="mt-4 text-slate-400 text-sm sm:text-base">
             Atendemos toda a Capital de São Paulo, Grande ABC e Guarulhos com coletas diárias a partir das 10h da manhã e taxa de entrega concluída de 98,7%.
