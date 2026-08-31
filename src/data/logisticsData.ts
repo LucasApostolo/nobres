@@ -214,7 +214,7 @@ export const SERVICES_DATA: ServiceCardItem[] = [
       'Fotos comprovatórias e geolocalização da entrega',
       'Taxa de sucesso de primeira tentativa superior a 98.7%'
     ],
-    highlight: 'SLA 99.4% Pontualidade',
+    highlight: 'SLA 98.7% Pontualidade',
     popular: true
   },
   {
