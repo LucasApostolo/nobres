@@ -115,7 +115,7 @@ export const PainVsSolution: React.FC = () => {
                 </div>
               </div>
               <span className="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-2.5 py-1 rounded-full border border-[#10B981]/30 uppercase tracking-wider">
-                SLA 99.4%
+                SLA 98.7%
               </span>
             </div>
 
