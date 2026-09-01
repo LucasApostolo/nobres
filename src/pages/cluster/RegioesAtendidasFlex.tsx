@@ -56,7 +56,7 @@ export const RegioesAtendidasFlex: React.FC = () => {
   const [searchResult, setSearchResult] = useState<{ status: 'idle' | 'found' | 'not_found'; item?: string }>({ status: 'idle' });
 
   useEffect(() => {
-    document.title = "Regiões e CEPs Atendidos | Mercado Livre Envios Flex SP - RouteFlex";
+    document.title = "Regiões e CEPs Atendidos | Mercado Livre Envios Flex SP - Nobres Entregas Flex";
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -122,7 +122,7 @@ export const RegioesAtendidasFlex: React.FC = () => {
             <Search className="w-5 h-5 text-[#00e7fe]" /> Consulte seu Bairro ou Região
           </h2>
           <p className="text-slate-400 text-xs mb-6">
-            Digite o nome do seu bairro ou cidade de coleta para verificar se a RouteFlex atende a sua conta.
+            Digite o nome do seu bairro ou cidade de coleta para verificar se a Nobres atende a sua conta.
           </p>
 
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3">
