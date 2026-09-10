@@ -14,7 +14,8 @@ import { WhatsAppModal } from './components/WhatsAppModal';
 import { Home } from './pages/Home';
 import { MercadoLivreFlex } from './pages/MercadoLivreFlex';
 import { ShopeeDireta } from './pages/ShopeeDireta';
-import { AtendimentoGuarulhos } from './pages/AtendimentoGuarulhos'; // <--- Importação adicionada
+import { AtendimentoGuarulhos } from './pages/AtendimentoGuarulhos';
+import { AtendimentoSuzano } from './pages/AtendimentoSuzano';
 
 // Cluster Pages (Mercado Livre Flex)
 import { RegioesAtendidasFlex } from './pages/cluster/RegioesAtendidasFlex';
@@ -66,10 +67,14 @@ export default function App() {
             element={<ShopeeDireta />} 
           />
 
-          {/* Rota Regional: Guarulhos */}
+          {/* Rotas Regionais */}
           <Route 
             path="/atendimento/guarulhos" 
             element={<AtendimentoGuarulhos />} 
+          />
+          <Route 
+            path="/atendimento/suzano" 
+            element={<AtendimentoSuzano />} 
           />
         </Routes>
 
