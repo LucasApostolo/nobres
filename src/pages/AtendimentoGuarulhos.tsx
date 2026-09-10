@@ -63,7 +63,7 @@ export const AtendimentoGuarulhos: React.FC = () => {
             <ShieldCheck className="w-8 h-8 text-[#00e7fe]" />
             <h3 className="text-xl font-bold text-white">Reputação Verde Garantida</h3>
             <p className="text-slate-400 text-sm">
-              SLA de entrega de 99.4%, garantindo que seus envios cheguem no mesmo dia ao comprador sem afetar seus termômetros.
+              SLA de entrega de 98.7%, garantindo que seus envios cheguem no mesmo dia ao comprador sem afetar seus termômetros.
             </p>
           </div>
 
