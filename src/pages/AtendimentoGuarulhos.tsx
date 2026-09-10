@@ -12,7 +12,7 @@ export const AtendimentoGuarulhos: React.FC = () => {
   }, []);
 
   const handleWhatsApp = (assunto: string) => {
-    // Dispara evento de conversão se gtag estiver disponível
+    // Dispara evento de conversão no Google Ads
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-18438688462/gHDyCJu7uvEcEM6doNhE',
@@ -21,15 +21,15 @@ export const AtendimentoGuarulhos: React.FC = () => {
       });
     }
     const text = `Olá! Preciso de coletas/entregas Flex na região de Guarulhos (${assunto}).`;
-    window.open(`https://wa.me/5511964402156?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/5511980224789?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-[#070A12] text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#070A12] text-slate-100 pt-28 sm:pt-36 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* Banner de Topo / Hero da Região */}
-        <header className="text-center space-y-4 pt-8">
+        <header className="text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e7fe]/10 border border-[#00e7fe]/20 text-[#00e7fe] text-sm font-medium">
             <MapPin className="w-4 h-4" /> Coletas e Entregas em Guarulhos - SP
           </div>
