@@ -1,239 +1,1017 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Truck, CheckCircle2, MapPin, Clock, ShieldCheck, ArrowRight, Phone, HelpCircle, Building2, PackageCheck } from 'lucide-react';
+import {
+  ArrowRight,
+  Building2,
+  CheckCircle2,
+  Clock,
+  MapPin,
+  PackageCheck,
+  Phone,
+  ShieldCheck,
+  Truck,
+} from 'lucide-react';
 
 export const AtendimentoMogiDasCruzes: React.FC = () => {
-  useEffect(() => {
-    // SEO - Title, Meta Description e Canonical específicos para Mogi das Cruzes
-    document.title = "Transportadora Envios Flex em Mogi das Cruzes | Mercado Livre e Shopee";
-    
-    // Atualiza ou cria a Meta Description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Transportadora para Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes. Coletas diárias programadas e entregas Same Day no Alto Tietê e Grande SP.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Transportadora para Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes. Coletas diárias programadas e entregas Same Day no Alto Tietê e Grande SP.';
-      document.head.appendChild(meta);
-    }
-
-    // Canonical Tag
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', 'https://www.nbrsenviosflex.com.br/atendimento/mogi-das-cruzes');
-    } else {
-      const link = document.createElement('link');
-      link.rel = 'canonical';
-      link.href = 'https://www.nbrsenviosflex.com.br/atendimento/mogi-das-cruzes';
-      document.head.appendChild(link);
-    }
-  }, []);
+  const pageUrl =
+    'https://www.nbrsenviosflex.com.br/atendimento/mogi-das-cruzes';
 
   const handleWhatsApp = (origem: string) => {
     // Dispara evento de conversão do Google Ads
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-18438688462/gHDyCJu7uvEcEM6doNhE',
-        'value': 1.0,
-        'currency': 'BRL'
+        send_to: 'AW-18438688462/gHDyCJu7uvEcEM6doNhE',
+        value: 1.0,
+        currency: 'BRL',
       });
     }
-    const text = `Olá! Preciso de coletas e entregas Flex/Shopee para minha loja em Mogi das Cruzes (${origem}).`;
-    window.open(`https://wa.me/5511980224789?text=${encodeURIComponent(text)}`, '_blank');
+
+    const text = `Olá! Gostaria de uma cotação para coletas e entregas em Mogi das Cruzes (${origem}).`;
+
+    window.open(
+      `https://wa.me/5511980224789?text=${encodeURIComponent(text)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+
+    name:
+      'Transportadora Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes',
+
+    description:
+      'Serviço de coleta e entrega para vendedores do Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes e região do Alto Tietê.',
+
+    url: pageUrl,
+
+    serviceType: [
+      'Mercado Livre Envios Flex',
+      'Shopee Entrega Direta',
+      'Entrega Same Day',
+      'Logística para marketplaces',
+    ],
+
+    provider: {
+      '@type': 'Organization',
+      name: 'Nobres Entregas',
+      url: 'https://www.nbrsenviosflex.com.br',
+    },
+
+    areaServed: {
+      '@type': 'City',
+      name: 'Mogi das Cruzes',
+      containedInPlace: {
+        '@type': 'State',
+        name: 'São Paulo',
+      },
+    },
+  };
+
+  const bairros = [
+    'Centro',
+    'César de Souza',
+    'Brás Cubas',
+    'Taboão',
+    'Mogilar',
+    'Alto do Ipiranga',
+    'Vila Oliveira',
+    'Jundiapeba',
+    'Socorro',
+    'Parque Monte Líbano',
+    'Vila Industrial',
+    'Sabaúna',
+  ];
+
   return (
-    <div className="min-h-screen bg-[#070A12] text-slate-100 pt-28 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto space-y-16">
-        
-        {/* HERO / PRIMEIRA DOBRA REGIONAL */}
-        <header className="text-center space-y-5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00e7fe]/10 border border-[#00e7fe]/25 text-[#00e7fe] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-            <MapPin className="w-4 h-4" /> Polo Logístico do Alto Tietê
-          </div>
-          
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Transportadora Mercado Livre Envios Flex e Shopee Entrega Direta em <span className="text-[#00e7fe]">Mogi das Cruzes</span>
-          </h1>
-          
-          <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed">
-            A Nobres Entregas realiza coletas para vendedores do Mercado Livre e Shopee em Mogi das Cruzes, com operação especializada de <Link to="/mercado-livre-envios-flex" className="text-[#00e7fe] hover:underline font-medium">Envios Flex</Link>, <Link to="/shopee-entrega-direta" className="text-[#00e7fe] hover:underline font-medium">Shopee Entrega Direta</Link> e envios no mesmo dia para Mogi, todo o Alto Tietê, São Paulo e Região Metropolitana.
-          </p>
+    <>
+      {/* ========================================= */}
+      {/* SEO */}
+      {/* ========================================= */}
 
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={() => handleWhatsApp("Hero Mogi das Cruzes")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#00e7fe] hover:bg-[#00c4d8] text-[#070A12] font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105"
-            >
-              <Phone className="w-5 h-5" /> Agendar Coleta em Mogi
-            </button>
-            <Link
-              to="/mercado-livre-envios-flex/regioes-atendidas"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-6 py-4 rounded-xl transition-all"
-            >
-              Ver Todas as Regiões
-            </Link>
-          </div>
-        </header>
+      <Helmet>
+        <title>
+          Transportadora Envios Flex em Mogi das Cruzes | Mercado Livre e Shopee
+        </title>
 
-        {/* DIFERENCIAIS OPERACIONAIS MOGI */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <Clock className="w-8 h-8 text-[#00e7fe]" />
-            <h3 className="text-xl font-bold text-white">Rota de Coleta Pontual</h3>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Coletamos diretamente no seu galpão, loja física ou centro de distribuição em Mogi das Cruzes no horário combinado, garantindo o tempo hábil para bipe e expedição.
-            </p>
+        <meta
+          name="description"
+          content="Transportadora para Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes. Coletas programadas e entregas Same Day no Alto Tietê e Grande SP."
+        />
+
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large"
+        />
+
+        <link
+          rel="canonical"
+          href={pageUrl}
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:type"
+          content="website"
+        />
+
+        <meta
+          property="og:site_name"
+          content="Nobres Entregas"
+        />
+
+        <meta
+          property="og:title"
+          content="Transportadora Envios Flex em Mogi das Cruzes | Nobres Entregas"
+        />
+
+        <meta
+          property="og:description"
+          content="Coletas para Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes, com operação Same Day no Alto Tietê e Grande São Paulo."
+        />
+
+        <meta
+          property="og:url"
+          content={pageUrl}
+        />
+
+        {/* Twitter */}
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+
+        <meta
+          name="twitter:title"
+          content="Transportadora Envios Flex em Mogi das Cruzes | Nobres Entregas"
+        />
+
+        <meta
+          name="twitter:description"
+          content="Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes com coleta programada e operação Same Day."
+        />
+
+        {/* Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      </Helmet>
+
+      <main>
+
+        {/* ========================================= */}
+        {/* HERO */}
+        {/* ========================================= */}
+
+        <section className="relative overflow-hidden border-b border-white/10">
+
+          <div className="absolute inset-0 bg-gradient-to-br from-[#07111d] via-[#070A12] to-[#071827]" />
+
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#00e7fe]/10 blur-[140px] rounded-full" />
+
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-24 lg:pt-32 lg:pb-32">
+
+            <div className="max-w-4xl">
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00e7fe]/30 bg-[#00e7fe]/5 text-[#00e7fe] text-sm font-semibold mb-7">
+
+                <MapPin size={16} />
+
+                Atendimento em Mogi das Cruzes - SP
+
+              </div>
+
+              {/* H1 */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white">
+
+                Transportadora para{' '}
+
+                <span className="text-[#00e7fe]">
+                  Mercado Livre Envios Flex
+                </span>
+
+                {' '}e{' '}
+
+                <span className="text-[#00e7fe]">
+                  Shopee Entrega Direta
+                </span>
+
+                {' '}em Mogi das Cruzes
+
+              </h1>
+
+              {/* Descrição */}
+              <p className="mt-7 text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl">
+
+                A Nobres Entregas realiza coletas para vendedores do
+                Mercado Livre e Shopee em Mogi das Cruzes, com operação
+                especializada em Mercado Livre Envios Flex e Shopee
+                Entrega Direta. Atendemos operações com origem no Alto
+                Tietê e distribuição para São Paulo e Grande São Paulo.
+
+              </p>
+
+              {/* Benefícios */}
+              <div className="flex flex-wrap gap-x-6 gap-y-3 mt-8 text-sm md:text-base text-slate-300">
+
+                <div className="flex items-center gap-2">
+                  <CheckCircle2
+                    size={18}
+                    className="text-[#00e7fe]"
+                  />
+
+                  Coletas programadas
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <CheckCircle2
+                    size={18}
+                    className="text-[#00e7fe]"
+                  />
+
+                  Operação Same Day
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <CheckCircle2
+                    size={18}
+                    className="text-[#00e7fe]"
+                  />
+
+                  Atendimento no Alto Tietê
+                </div>
+
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-10">
+
+                <button
+                  onClick={() => handleWhatsApp('Hero Mogi das Cruzes')}
+                  className="inline-flex justify-center items-center gap-2 bg-[#00e7fe] text-[#061018] font-bold px-7 py-4 rounded-xl hover:opacity-90 transition"
+                >
+
+                  <Phone size={19} />
+
+                  Quero cotar minha operação
+
+                  <ArrowRight size={19} />
+
+                </button>
+
+                <a
+                  href="#como-funciona"
+                  className="inline-flex justify-center items-center gap-2 border border-white/15 bg-white/5 px-7 py-4 rounded-xl text-white font-semibold hover:bg-white/10 transition"
+                >
+
+                  Como funciona a coleta
+
+                </a>
+
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <ShieldCheck className="w-8 h-8 text-[#00e7fe]" />
-            <h3 className="text-xl font-bold text-white">SLA e Termômetro Protegido</h3>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Com taxa de entrega no mesmo dia superior a 99%, garantimos que suas vendas na Shopee e Mercado Livre mantenham o selo de entrega no prazo. Saiba mais sobre <Link to="/mercado-livre-envios-flex/reputacao-verde" className="text-[#00e7fe] hover:underline">reputação verde no Flex</Link>.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <Truck className="w-8 h-8 text-[#00e7fe]" />
-            <h3 className="text-xl font-bold text-white">Conexão Mogi → Toda a Grande SP</h3>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Expedição rápida conectando os vendedores de Mogi das Cruzes até o destino final dos compradores na Capital, ABCD e Zona Norte/Oeste/Leste/Sul de SP.
-            </p>
-          </div>
         </section>
 
-        {/* DETALHAMENTO LOCAL: Bairros e Polígonos de Mogi */}
-        <section className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-6">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Building2 className="w-6 h-6 text-[#00e7fe]" /> Bairros e Polos Comerciais Atendidos em Mogi das Cruzes
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base">
-              Nossa frota realiza rotas de coleta e entregas Same Day cobrindo os principais bairros e distritos industriais de Mogi das Cruzes:
-            </p>
+        {/* ========================================= */}
+        {/* SERVIÇOS */}
+        {/* ========================================= */}
+
+        <section className="py-24">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="max-w-3xl mb-12">
+
+              <span className="text-[#00e7fe] font-semibold text-sm uppercase tracking-wider">
+                Logística para marketplaces
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+
+                Mercado Livre Envios Flex e Shopee Entrega Direta em Mogi das Cruzes
+
+              </h2>
+
+              <p className="text-slate-400 text-lg mt-5 leading-relaxed">
+
+                Atendemos vendedores, lojas, centros de distribuição e
+                operações de e-commerce localizados em Mogi das Cruzes
+                que precisam de uma transportadora especializada em
+                coleta, última milha e entregas no mesmo dia.
+
+              </p>
+
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+
+              {/* Mercado Livre */}
+              <article className="p-8 rounded-2xl bg-white/[0.035] border border-white/10">
+
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#00e7fe]/10 mb-6">
+
+                  <PackageCheck className="text-[#00e7fe]" />
+
+                </div>
+
+                <h3 className="text-2xl font-bold text-white">
+
+                  Mercado Livre Envios Flex
+
+                </h3>
+
+                <p className="mt-4 text-slate-400 leading-relaxed">
+
+                  Coleta para vendedores que utilizam Mercado Livre
+                  Envios Flex e precisam despachar seus pedidos a partir
+                  de Mogi das Cruzes com agilidade e acompanhamento
+                  operacional.
+
+                </p>
+
+                <Link
+                  to="/mercado-livre-envios-flex"
+                  className="inline-flex items-center gap-2 mt-6 text-[#00e7fe] font-semibold hover:gap-3 transition-all"
+                >
+
+                  Conhecer Envios Flex
+
+                  <ArrowRight size={17} />
+
+                </Link>
+
+              </article>
+
+              {/* Shopee */}
+              <article className="p-8 rounded-2xl bg-white/[0.035] border border-white/10">
+
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#00e7fe]/10 mb-6">
+
+                  <Truck className="text-[#00e7fe]" />
+
+                </div>
+
+                <h3 className="text-2xl font-bold text-white">
+
+                  Shopee Entrega Direta
+
+                </h3>
+
+                <p className="mt-4 text-slate-400 leading-relaxed">
+
+                  Solução logística para vendedores da Shopee que
+                  utilizam Entrega Direta e precisam de coleta e
+                  distribuição de pedidos com origem em Mogi das Cruzes.
+
+                </p>
+
+                <Link
+                  to="/shopee-entrega-direta"
+                  className="inline-flex items-center gap-2 mt-6 text-[#00e7fe] font-semibold hover:gap-3 transition-all"
+                >
+
+                  Conhecer Shopee Entrega Direta
+
+                  <ArrowRight size={17} />
+
+                </Link>
+
+              </article>
+
+            </div>
+
           </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-slate-300 text-sm">
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Centro Histórico
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Cesar de Souza
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Brás Cubas
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Taboão (Distr. Ind.)
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Mogilar
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Alto do Ipiranga
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Vila Oliveira
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Jundiapeba
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Socorro
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Parque Monte Líbano
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Vila Industrial
-            </div>
-            <div className="p-3 rounded-lg bg-slate-800/40 border border-slate-700/50 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" /> Sabaúna
-            </div>
-          </div>
+
         </section>
 
-        {/* LOGÍSTICA DE COLETAS EM MOGI */}
-        <section className="space-y-6">
-          <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <PackageCheck className="w-6 h-6 text-[#00e7fe]" /> Como funciona a Coleta Express em Mogi das Cruzes?
-            </h2>
-            <p className="text-slate-300 leading-relaxed">
-              Mogi das Cruzes é um dos maiores hubs produtivos e comerciais do Alto Tietê. Para atender os sellers da cidade sem falhas no prazo de corte, estruturamos uma logística rápida:
-            </p>
-            <ul className="space-y-3 text-slate-300 text-sm sm:text-base list-disc list-inside">
-              <li><strong>Coletas Diárias Programadas:</strong> Nossa equipe passa na sua empresa em horário fixo para recolher seus pacotes prontos.</li>
-              <li><strong>Triagem e Bipagem Rápida:</strong> Seus envios do Mercado Livre Flex e Shopee são atualizados no sistema logo após a coleta.</li>
-              <li><strong>Entrega Same Day:</strong> O cliente que comprou até o horário limite recebe no mesmo dia, no conforto de casa em Mogi ou qualquer cidade atendida da Grande SP.</li>
-            </ul>
-            <div className="pt-2">
-              <Link to="/mercado-livre-envios-flex/como-ativar" className="text-[#00e7fe] font-semibold hover:underline inline-flex items-center gap-1 text-sm">
-                Veja o passo a passo de como ativar o Flex na sua conta <ArrowRight className="w-4 h-4" />
+        {/* ========================================= */}
+        {/* COMO FUNCIONA */}
+        {/* ========================================= */}
+
+        <section
+          id="como-funciona"
+          className="py-24 bg-white/[0.025] border-y border-white/10"
+        >
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="max-w-3xl mx-auto text-center">
+
+              <span className="text-[#00e7fe] font-semibold text-sm uppercase tracking-wider">
+                Processo simples
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+
+                Como funciona a coleta em Mogi das Cruzes?
+
+              </h2>
+
+              <p className="text-slate-400 text-lg mt-5">
+
+                Organizamos a retirada e distribuição dos pedidos para
+                tornar sua operação de e-commerce mais simples,
+                previsível e eficiente.
+
+              </p>
+
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-6 mt-14">
+
+              {/* Etapa 1 */}
+              <div className="p-6 rounded-2xl border border-white/10 bg-[#070A12]">
+
+                <span className="text-[#00e7fe] font-bold text-lg">
+                  01
+                </span>
+
+                <h3 className="font-bold text-white text-lg mt-4">
+                  Prepare os pedidos
+                </h3>
+
+                <p className="text-slate-400 mt-3 text-sm leading-relaxed">
+
+                  Organize os volumes vendidos no Mercado Livre ou
+                  Shopee para a coleta.
+
+                </p>
+
+              </div>
+
+              {/* Etapa 2 */}
+              <div className="p-6 rounded-2xl border border-white/10 bg-[#070A12]">
+
+                <span className="text-[#00e7fe] font-bold text-lg">
+                  02
+                </span>
+
+                <h3 className="font-bold text-white text-lg mt-4">
+                  Realizamos a coleta
+                </h3>
+
+                <p className="text-slate-400 mt-3 text-sm leading-relaxed">
+
+                  Nossa operação realiza a retirada dos pedidos no local
+                  combinado em Mogi das Cruzes.
+
+                </p>
+
+              </div>
+
+              {/* Etapa 3 */}
+              <div className="p-6 rounded-2xl border border-white/10 bg-[#070A12]">
+
+                <span className="text-[#00e7fe] font-bold text-lg">
+                  03
+                </span>
+
+                <h3 className="font-bold text-white text-lg mt-4">
+                  Organização das rotas
+                </h3>
+
+                <p className="text-slate-400 mt-3 text-sm leading-relaxed">
+
+                  Os pedidos são separados e direcionados para as rotas
+                  previstas na operação.
+
+                </p>
+
+              </div>
+
+              {/* Etapa 4 */}
+              <div className="p-6 rounded-2xl border border-white/10 bg-[#070A12]">
+
+                <span className="text-[#00e7fe] font-bold text-lg">
+                  04
+                </span>
+
+                <h3 className="font-bold text-white text-lg mt-4">
+                  Entrega ao comprador
+                </h3>
+
+                <p className="text-slate-400 mt-3 text-sm leading-relaxed">
+
+                  Os volumes seguem para entrega conforme a modalidade,
+                  horário e região de destino.
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* ========================================= */}
+        {/* MOGI / ALTO TIETÊ */}
+        {/* ========================================= */}
+
+        <section className="py-24">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+              <div>
+
+                <span className="text-[#00e7fe] font-semibold text-sm uppercase tracking-wider">
+                  Atendimento regional
+                </span>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+
+                  Transportadora para vendedores e empresas de Mogi das Cruzes
+
+                </h2>
+
+                <p className="text-slate-400 text-lg mt-5 leading-relaxed">
+
+                  Mogi das Cruzes é um dos principais polos comerciais,
+                  industriais e logísticos do Alto Tietê. A Nobres
+                  Entregas atende vendedores, lojas, empresas e operações
+                  de e-commerce da cidade que precisam de coleta para
+                  seus pedidos vendidos em marketplaces.
+
+                </p>
+
+                <p className="text-slate-400 text-lg mt-4 leading-relaxed">
+
+                  Nossa operação conecta coletas realizadas em Mogi das
+                  Cruzes às rotas de distribuição para São Paulo,
+                  municípios da Região Metropolitana e demais áreas
+                  atendidas pela Nobres Entregas.
+
+                </p>
+
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+
+                <div className="p-6 rounded-2xl bg-white/[0.035] border border-white/10">
+
+                  <Clock className="text-[#00e7fe]" />
+
+                  <h3 className="font-bold text-white mt-4">
+                    Coletas programadas
+                  </h3>
+
+                  <p className="text-sm text-slate-400 mt-2">
+                    Janela de coleta definida conforme sua operação.
+                  </p>
+
+                </div>
+
+                <div className="p-6 rounded-2xl bg-white/[0.035] border border-white/10">
+
+                  <Truck className="text-[#00e7fe]" />
+
+                  <h3 className="font-bold text-white mt-4">
+                    Operação Same Day
+                  </h3>
+
+                  <p className="text-sm text-slate-400 mt-2">
+                    Estrutura direcionada para operações com entrega no mesmo dia.
+                  </p>
+
+                </div>
+
+                <div className="p-6 rounded-2xl bg-white/[0.035] border border-white/10">
+
+                  <ShieldCheck className="text-[#00e7fe]" />
+
+                  <h3 className="font-bold text-white mt-4">
+                    Acompanhamento operacional
+                  </h3>
+
+                  <p className="text-sm text-slate-400 mt-2">
+                    Suporte para acompanhamento das etapas da operação.
+                  </p>
+
+                </div>
+
+                <div className="p-6 rounded-2xl bg-white/[0.035] border border-white/10">
+
+                  <MapPin className="text-[#00e7fe]" />
+
+                  <h3 className="font-bold text-white mt-4">
+                    Alto Tietê
+                  </h3>
+
+                  <p className="text-sm text-slate-400 mt-2">
+                    Atendimento regional com origem em Mogi das Cruzes.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* ========================================= */}
+        {/* BAIRROS */}
+        {/* ========================================= */}
+
+        <section className="py-24 bg-white/[0.025] border-y border-white/10">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="max-w-3xl">
+
+              <span className="text-[#00e7fe] font-semibold text-sm uppercase tracking-wider">
+                Cobertura local
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 flex items-center gap-3">
+
+                <Building2 className="text-[#00e7fe] shrink-0" />
+
+                Bairros e regiões atendidas em Mogi das Cruzes
+
+              </h2>
+
+              <p className="text-slate-400 text-lg mt-5 leading-relaxed">
+
+                A operação pode atender vendedores, empresas, lojas,
+                residências comerciais e galpões localizados em
+                diferentes regiões de Mogi das Cruzes. Consulte nossa
+                equipe para confirmar a disponibilidade da coleta no
+                seu endereço.
+
+              </p>
+
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
+
+              {bairros.map((bairro) => (
+                <div
+                  key={bairro}
+                  className="flex items-center gap-2 p-4 rounded-xl bg-white/[0.035] border border-white/10 text-slate-300"
+                >
+
+                  <CheckCircle2
+                    size={17}
+                    className="text-[#00e7fe] shrink-0"
+                  />
+
+                  <span className="text-sm font-medium">
+                    {bairro}
+                  </span>
+
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* ========================================= */}
+        {/* CONTEÚDO LOCAL */}
+        {/* ========================================= */}
+
+        <section className="py-24">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="max-w-4xl">
+
+              <span className="text-[#00e7fe] font-semibold text-sm uppercase tracking-wider">
+                Operação local
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+
+                Logística para e-commerce no Alto Tietê
+
+              </h2>
+
+              <p className="text-slate-400 text-lg mt-5 leading-relaxed">
+
+                Para vendedores de Mogi das Cruzes, ter uma operação de
+                coleta bem organizada é especialmente importante quando
+                os pedidos precisam seguir para diferentes regiões da
+                Grande São Paulo dentro de uma janela curta de entrega.
+
+              </p>
+
+              <p className="text-slate-400 text-lg mt-4 leading-relaxed">
+
+                A Nobres Entregas trabalha com rotas de coleta e
+                distribuição voltadas a operações de marketplace,
+                permitindo que vendedores de Mogi concentrem a expedição
+                dos pedidos em um único fluxo operacional.
+
+              </p>
+
+              <div className="mt-8">
+
+                <Link
+                  to="/mercado-livre-envios-flex/como-ativar"
+                  className="inline-flex items-center gap-2 text-[#00e7fe] font-semibold hover:gap-3 transition-all"
+                >
+
+                  Veja como ativar o Mercado Livre Envios Flex
+
+                  <ArrowRight size={17} />
+
+                </Link>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* ========================================= */}
+        {/* LINKS INTERNOS */}
+        {/* ========================================= */}
+
+        <section className="py-24 bg-white/[0.025] border-y border-white/10">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="max-w-3xl">
+
+              <h2 className="text-3xl font-bold text-white">
+                Conheça nossas soluções para marketplaces
+              </h2>
+
+              <p className="text-slate-400 mt-4">
+
+                Veja outras páginas da Nobres Entregas e conheça melhor
+                nossas soluções para Mercado Livre, Shopee e operações
+                de entrega Same Day.
+
+              </p>
+
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5 mt-10">
+
+              <Link
+                to="/mercado-livre-envios-flex"
+                className="p-6 border border-white/10 rounded-xl hover:border-[#00e7fe]/40 transition"
+              >
+
+                <h3 className="font-bold text-white">
+                  Mercado Livre Envios Flex
+                </h3>
+
+                <p className="text-sm text-slate-400 mt-2">
+                  Conheça nossa operação para vendedores do Mercado Livre.
+                </p>
+
               </Link>
+
+              <Link
+                to="/shopee-entrega-direta"
+                className="p-6 border border-white/10 rounded-xl hover:border-[#00e7fe]/40 transition"
+              >
+
+                <h3 className="font-bold text-white">
+                  Shopee Entrega Direta
+                </h3>
+
+                <p className="text-sm text-slate-400 mt-2">
+                  Veja como funciona nossa solução para vendedores da Shopee.
+                </p>
+
+              </Link>
+
+              <Link
+                to="/mercado-livre-envios-flex/regioes-atendidas"
+                className="p-6 border border-white/10 rounded-xl hover:border-[#00e7fe]/40 transition"
+              >
+
+                <h3 className="font-bold text-white">
+                  Regiões atendidas
+                </h3>
+
+                <p className="text-sm text-slate-400 mt-2">
+                  Consulte outras cidades e regiões atendidas pela Nobres.
+                </p>
+
+              </Link>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* FAQ EXCLUSIVA PARA MOGI DAS CRUZES */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center justify-center gap-2">
-              <HelpCircle className="w-6 h-6 text-[#00e7fe]" /> Perguntas Frequentes sobre Coletas em Mogi
-            </h2>
-            <p className="text-slate-400 text-sm">Dúvidas comuns de sellers de Mogi das Cruzes antes de contratar nossa transportadora.</p>
+        {/* ========================================= */}
+        {/* FAQ */}
+        {/* ========================================= */}
+
+        <section className="py-24">
+
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+
+            <div className="text-center mb-12">
+
+              <span className="text-[#00e7fe] font-semibold text-sm uppercase tracking-wider">
+                Perguntas frequentes
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+
+                Envios Flex e Shopee Entrega Direta em Mogi das Cruzes
+
+              </h2>
+
+            </div>
+
+            <div className="space-y-4">
+
+              <details className="group border border-white/10 rounded-xl p-6 bg-white/[0.025]">
+
+                <summary className="cursor-pointer font-semibold text-white">
+
+                  A Nobres coleta Mercado Livre Envios Flex em Mogi das Cruzes?
+
+                </summary>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+
+                  Sim. A Nobres Entregas atende vendedores que utilizam
+                  Mercado Livre Envios Flex em Mogi das Cruzes, conforme
+                  disponibilidade operacional e área de coleta.
+
+                </p>
+
+              </details>
+
+              <details className="group border border-white/10 rounded-xl p-6 bg-white/[0.025]">
+
+                <summary className="cursor-pointer font-semibold text-white">
+
+                  A Nobres trabalha com Shopee Entrega Direta em Mogi?
+
+                </summary>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+
+                  Sim. Atendemos operações de Shopee Entrega Direta para
+                  vendedores localizados em Mogi das Cruzes, de acordo
+                  com a cobertura e as condições da operação.
+
+                </p>
+
+              </details>
+
+              <details className="group border border-white/10 rounded-xl p-6 bg-white/[0.025]">
+
+                <summary className="cursor-pointer font-semibold text-white">
+
+                  Quais bairros de Mogi das Cruzes podem ter coleta?
+
+                </summary>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+
+                  A operação pode atender diferentes regiões da cidade,
+                  incluindo Centro, César de Souza, Brás Cubas, Mogilar,
+                  Jundiapeba, Taboão e outras áreas. A disponibilidade
+                  deve ser confirmada conforme o endereço.
+
+                </p>
+
+              </details>
+
+              <details className="group border border-white/10 rounded-xl p-6 bg-white/[0.025]">
+
+                <summary className="cursor-pointer font-semibold text-white">
+
+                  As entregas são realizadas no mesmo dia?
+
+                </summary>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+
+                  A Nobres trabalha com operações Same Day. As condições
+                  de entrega variam conforme horário da coleta, endereço
+                  do destinatário e modalidade contratada.
+
+                </p>
+
+              </details>
+
+              <details className="group border border-white/10 rounded-xl p-6 bg-white/[0.025]">
+
+                <summary className="cursor-pointer font-semibold text-white">
+
+                  Qual é o horário de coleta em Mogi das Cruzes?
+
+                </summary>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+
+                  A janela de coleta é definida conforme endereço, volume
+                  de pedidos, rota disponível e necessidade operacional
+                  do vendedor.
+
+                </p>
+
+              </details>
+
+              <details className="group border border-white/10 rounded-xl p-6 bg-white/[0.025]">
+
+                <summary className="cursor-pointer font-semibold text-white">
+
+                  Existe quantidade mínima de pacotes?
+
+                </summary>
+
+                <p className="text-slate-400 mt-4 leading-relaxed">
+
+                  A viabilidade da coleta depende da região, frequência e
+                  perfil da operação. Entre em contato com nossa equipe
+                  informando sua média diária de pacotes para avaliarmos
+                  o atendimento.
+
+                </p>
+
+              </details>
+
+            </div>
+
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-white text-lg">A Nobres coleta Mercado Livre Envios Flex em Mogi?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Sim! Realizamos coletas diárias em estabelecimentos comerciais, galpões e residências de sellers habilitados no Mercado Livre Flex em Mogi das Cruzes.
-              </p>
+        </section>
+
+        {/* ========================================= */}
+        {/* CTA FINAL */}
+        {/* ========================================= */}
+
+        <section className="pb-24">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div className="relative overflow-hidden rounded-3xl border border-[#00e7fe]/20 bg-gradient-to-r from-[#081626] to-[#07101c] px-8 py-14 md:px-14">
+
+              <div className="absolute right-0 top-0 w-80 h-80 bg-[#00e7fe]/10 blur-[100px] rounded-full" />
+
+              <div className="relative max-w-3xl">
+
+                <span className="text-[#00e7fe] font-semibold">
+                  Nobres Entregas em Mogi das Cruzes
+                </span>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+
+                  Precisa de uma transportadora para seus pedidos do
+                  Mercado Livre ou Shopee?
+
+                </h2>
+
+                <p className="text-slate-300 text-lg mt-5">
+
+                  Fale com nossa equipe e solicite uma análise da sua
+                  operação de coleta em Mogi das Cruzes.
+
+                </p>
+
+                <button
+                  onClick={() =>
+                    handleWhatsApp('CTA Final Mogi das Cruzes')
+                  }
+                  className="inline-flex items-center gap-2 mt-8 bg-[#00e7fe] text-[#061018] font-bold px-7 py-4 rounded-xl hover:opacity-90 transition"
+                >
+
+                  Solicitar cotação
+
+                  <ArrowRight size={19} />
+
+                </button>
+
+              </div>
+
             </div>
 
-            <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-white text-lg">A Shopee Entrega Direta funciona com coleta em Mogi das Cruzes?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Sim, coletamos pedidos de lojas que operam no modelo de Entrega Direta da Shopee na região de Mogi e realizamos a distribuição no mesmo dia.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-white text-lg">Qual é o horário de coleta em Mogi das Cruzes?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Alinhamos a janela de coleta conforme o volume do cliente e o horário de corte configurado nas suas contas de e-commerce.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
-              <h3 className="font-bold text-white text-lg">Existe volume mínimo de pacotes para coleta?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Atendemos tanto pequenos e médios vendedores quanto operações com alto volume diário. Entre em contato para analisar a viabilidade para a sua rota.
-              </p>
-            </div>
           </div>
+
         </section>
 
-        {/* CTA FINAL DE CONVERSÃO */}
-        <section className="text-center p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700 space-y-5">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">
-            Pronto para impulsionar suas vendas em Mogi das Cruzes com entrega Same Day?
-          </h2>
-          <p className="text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
-            Fale diretamente com nossa equipe no WhatsApp. Configuramos seu atendimento e agendamos o teste de coleta para Mogi sem complicação.
-          </p>
-          <button
-            onClick={() => handleWhatsApp("CTA Final Mogi das Cruzes")}
-            className="inline-flex items-center gap-2 bg-[#00e7fe] hover:bg-[#00c4d8] text-[#070A12] font-bold px-8 py-4 rounded-xl shadow-lg transition-all transform hover:scale-105"
-          >
-            Falar com Especialista no WhatsApp <ArrowRight className="w-5 h-5" />
-          </button>
-        </section>
-
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
