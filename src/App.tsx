@@ -21,6 +21,7 @@ import { ShopeeDireta } from './pages/ShopeeDireta';
 // Regional Pages
 import { AtendimentoGuarulhos } from './pages/AtendimentoGuarulhos';
 import { AtendimentoSuzano } from './pages/AtendimentoSuzano';
+import { AtendimentoMogiDasCruzes } from './pages/AtendimentoMogiDasCruzes';
 
 // Cluster Pages - Mercado Livre Envios Flex
 import { RegioesAtendidasFlex } from './pages/cluster/RegioesAtendidasFlex';
@@ -93,7 +94,10 @@ export default function App() {
               element={<ShopeeDireta />}
             />
 
-            {/* Páginas Regionais */}
+            {/* ========================================= */}
+            {/* PÁGINAS REGIONAIS */}
+            {/* ========================================= */}
+
             <Route
               path="/atendimento/guarulhos"
               element={<AtendimentoGuarulhos />}
@@ -102,6 +106,11 @@ export default function App() {
             <Route
               path="/atendimento/suzano"
               element={<AtendimentoSuzano />}
+            />
+
+            <Route
+              path="/atendimento/mogi-das-cruzes"
+              element={<AtendimentoMogiDasCruzes />}
             />
 
           </Routes>
