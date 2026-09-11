@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+
 import { Hero } from '../components/Hero';
 import { MarketplacesBar } from '../components/MarketplacesBar';
 import { PainVsSolution } from '../components/PainVsSolution';
@@ -15,37 +17,106 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ onOpenQuoteModal }) => {
+  const pageUrl = 'https://www.nbrsenviosflex.com.br/';
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Nobres Entregas',
+    url: pageUrl,
+    telephone: '+55 11 98022-4789',
+    email: 'operacional@nobresentregas.com.br',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rua São Leopoldo, 811',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      addressCountry: 'BR',
+    },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'São Paulo e Grande São Paulo',
+    },
+  };
+
   return (
-    <main>
-      {/* Hero Section */}
-      <Hero onOpenQuoteModal={onOpenQuoteModal} />
+    <>
+      <Helmet>
+        <title>
+          Transportadora Mercado Livre Flex e Shopee em SP | Nobres Entregas
+        </title>
 
-      {/* Certified Marketplaces Bar */}
-      <MarketplacesBar />
+        <meta
+          name="description"
+          content="Transportadora para Mercado Livre Envios Flex e Shopee Entrega Direta em São Paulo e Grande SP. Coletas programadas e entregas Same Day para sellers."
+        />
 
-      {/* Pain vs Solution Comparison */}
-      <PainVsSolution />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large"
+        />
 
-      {/* Services & Logistics Solutions */}
-      <ServicesSection onOpenQuoteModal={onOpenQuoteModal} />
+        <link
+          rel="canonical"
+          href={pageUrl}
+        />
 
-      {/* Interactive Seller Volume & ROI Simulator */}
-      <SimulatorSection />
+        <meta
+          property="og:type"
+          content="website"
+        />
 
-      {/* Coverage & SP Zones Explorer */}
-      <CoverageSection />
+        <meta
+          property="og:site_name"
+          content="Nobres Entregas"
+        />
 
-      {/* Step-by-Step Logistics Flow */}
-      <StepByStep />
+        <meta
+          property="og:title"
+          content="Transportadora Mercado Livre Flex e Shopee em SP"
+        />
 
-      {/* Social Proof & Verified Seller Reviews */}
-      <TestimonialsSection />
+        <meta
+          property="og:description"
+          content="Coletas programadas e entregas Same Day para Mercado Livre Envios Flex e Shopee Entrega Direta em São Paulo."
+        />
 
-      {/* Frequently Asked Questions */}
-      <FaqSection />
+        <meta
+          property="og:url"
+          content={pageUrl}
+        />
 
-      {/* High Conversion Urgent CTA Banner */}
-      <CtaBanner onOpenQuoteModal={onOpenQuoteModal} />
-    </main>
+        <meta
+          name="twitter:card"
+          content="summary"
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+      </Helmet>
+
+      <main>
+        <Hero onOpenQuoteModal={onOpenQuoteModal} />
+
+        <MarketplacesBar />
+
+        <PainVsSolution />
+
+        <ServicesSection onOpenQuoteModal={onOpenQuoteModal} />
+
+        <SimulatorSection />
+
+        <CoverageSection />
+
+        <StepByStep />
+
+        <TestimonialsSection />
+
+        <FaqSection />
+
+        <CtaBanner onOpenQuoteModal={onOpenQuoteModal} />
+      </main>
+    </>
   );
 };
