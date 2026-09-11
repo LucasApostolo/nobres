@@ -23,6 +23,7 @@ import { AtendimentoGuarulhos } from './pages/AtendimentoGuarulhos';
 import { AtendimentoSuzano } from './pages/AtendimentoSuzano';
 import { AtendimentoMogiDasCruzes } from './pages/AtendimentoMogiDasCruzes';
 import { AtendimentoSaoBernardoDoCampo } from './pages/AtendimentoSaoBernardoDoCampo';
+import { AtendimentoOsasco } from './pages/AtendimentoOsasco';
 
 // Mercado Livre Envios Flex - Cluster Pages
 import { RegioesAtendidasFlex } from './pages/cluster/RegioesAtendidasFlex';
@@ -139,6 +140,12 @@ export default function App() {
             <Route
               path="/atendimento/sao-bernardo-do-campo"
               element={<AtendimentoSaoBernardoDoCampo />}
+            />
+
+            /* {/* Osasco */} */
+            <Route
+             path="/atendimento/osasco"
+             element={<AtendimentoOsasco />}
             />
 
           </Routes>
