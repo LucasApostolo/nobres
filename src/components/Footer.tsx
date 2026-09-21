@@ -1,128 +1,371 @@
 import React from 'react';
-import { MessageCircle, Phone, Mail, MapPin, Clock, ShieldCheck, CheckCircle2 } from 'lucide-react';
+
+import {
+  Clock,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Route,
+  ShieldCheck,
+} from 'lucide-react';
+
+import { Link } from 'react-router-dom';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
+const mercadoLivreLinks = [
+  {
+    label: 'Mercado Livre Envios Flex',
+    href: '/mercado-livre-envios-flex',
+  },
+  {
+    label: 'Regiões atendidas',
+    href: '/mercado-livre-envios-flex/regioes-atendidas',
+  },
+  {
+    label: 'Quanto custa o Envios Flex',
+    href: '/mercado-livre-envios-flex/quanto-custa',
+  },
+  {
+    label: 'Como ativar o Envios Flex',
+    href: '/mercado-livre-envios-flex/como-ativar',
+  },
+  {
+    label: 'Reputação no Envios Flex',
+    href: '/mercado-livre-envios-flex/reputacao-verde',
+  },
+];
+
+const regionalLinks = [
+  {
+    label: 'Guarulhos',
+    href: '/atendimento/guarulhos',
+  },
+  {
+    label: 'Osasco',
+    href: '/atendimento/osasco',
+  },
+  {
+    label: 'São Bernardo do Campo',
+    href: '/atendimento/sao-bernardo-do-campo',
+  },
+  {
+    label: 'Mogi das Cruzes',
+    href: '/atendimento/mogi-das-cruzes',
+  },
+  {
+    label: 'Suzano',
+    href: '/atendimento/suzano',
+  },
+];
+
 export const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  const whatsappUrl = buildWhatsAppLink({
+    message:
+      'Olá! Gostaria de falar com a equipe da Nobres Entregas sobre minha operação logística.',
+  });
+
   return (
-    <footer className="bg-[#070A12] border-t border-white/5 text-slate-400 text-xs relative overflow-hidden">
-      
-      {/* Top Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          
-          {/* Col 1 & 2: Brand & About */}
-          <div className="lg:col-span-2 space-y-4">
-            <a href="#inicio" className="flex items-center gap-3 group">
-              <img 
-                src="/logos/nobres.png" 
-                alt="Nobres Entregas Flex" 
+    <footer className="relative overflow-hidden border-t border-white/5 bg-[#070A12] text-xs text-slate-400">
+
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-[#008ef4]/[0.035] blur-[140px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12">
+
+          {/* BRAND */}
+          <div className="space-y-5 lg:col-span-4">
+
+            <a href="#inicio" className="group inline-flex items-center gap-3">
+
+              <img
+                src="/logos/nobres.png"
+                alt="Nobres Entregas"
                 className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
+
               <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-lg font-extrabold tracking-tight text-white">NOBRES</span>
-                  <span className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4] tracking-tight">ENTREGAS</span>
-                  <span className="text-[10px] uppercase font-black tracking-widest px-1.5 py-0.5 rounded-full bg-[#00e7fe]/15 text-[#00e7fe] border border-[#00e7fe]/30">FLEX</span>
+
+                <div className="flex flex-wrap items-center gap-1.5">
+
+                  <span className="text-lg font-extrabold tracking-tight text-white">
+                    NOBRES
+                  </span>
+
+                  <span className="bg-gradient-to-r from-[#00e7fe] to-[#008ef4] bg-clip-text text-lg font-black tracking-tight text-transparent">
+                    ENTREGAS
+                  </span>
+
                 </div>
-                <span className="text-[10px] text-slate-400 font-medium">Logística Same Day • São Paulo</span>
+
+                <span className="text-[10px] font-medium text-slate-500">
+                  Logística de última milha • São Paulo
+                </span>
+
               </div>
+
             </a>
 
-            <p className="text-slate-300 text-xs leading-relaxed max-w-sm">
-              Operação logística especializada em entregas no mesmo dia e envios Flex para Mercado Livre, Shopee, Amazon e Magalu. Pontualidade máxima, proteção de reputação verde e suporte humanizado em tempo real.
+            <p className="max-w-sm text-xs leading-relaxed text-slate-400">
+              Operação logística para sellers e e-commerces, com foco em
+              Mercado Livre Envios Flex, Shopee Entrega Direta, coletas
+              programadas e entregas de última milha em São Paulo e Grande SP.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
-              <div className="p-2 rounded-full bg-white/5 border border-white/10 text-[#10B981] flex items-center gap-1.5 text-[11px] font-semibold">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Empresa Homologada</span>
+            <div className="flex flex-wrap gap-2">
+
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-white/[0.03] px-3 py-2 text-[10px] font-semibold text-slate-300">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                Operação para sellers
               </div>
-              <div className="p-2 rounded-full bg-white/5 border border-white/10 text-[#00e7fe] flex items-center gap-1.5 text-[11px] font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>SLA 98.7%</span>
+
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-white/[0.03] px-3 py-2 text-[10px] font-semibold text-slate-300">
+                <Route className="h-3.5 w-3.5 text-[#00e7fe]" />
+                Última milha
               </div>
+
             </div>
+
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#00e7fe]/20 bg-[#00e7fe]/5 px-4 py-2.5 text-[11px] font-bold text-[#00e7fe] transition-all hover:border-[#00e7fe]/35 hover:bg-[#00e7fe]/10"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Falar com a Nobres
+            </a>
+
           </div>
 
-          {/* Col 3: Navegação Rápida */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Navegação</h4>
-            <ul className="space-y-2">
-              <li><a href="#inicio" className="hover:text-[#00e7fe] transition-colors">Início</a></li>
-              <li><a href="#servicos" className="hover:text-[#00e7fe] transition-colors">Soluções Flex</a></li>
-              <li><a href="#comparativo" className="hover:text-[#00e7fe] transition-colors">Comparativo de Transportadoras</a></li>
-              <li><a href="#simulador" className="hover:text-[#00e7fe] transition-colors">Simulador de Volume</a></li>
-              <li><a href="#cobertura" className="hover:text-[#00e7fe] transition-colors">Cobertura em SP e ABC</a></li>
-              <li><a href="#depoimentos" className="hover:text-[#00e7fe] transition-colors">Depoimentos de Sellers</a></li>
-              <li><a href="#faq" className="hover:text-[#00e7fe] transition-colors">Dúvidas Frequentes</a></li>
+          {/* MERCADO LIVRE CLUSTER */}
+          <div className="space-y-4 lg:col-span-2">
+
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white">
+              Mercado Livre
+            </h4>
+
+            <ul className="space-y-2.5">
+              {mercadoLivreLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="transition-colors hover:text-[#00e7fe]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+
           </div>
 
-          {/* Col 4: Marketplaces & Soluções */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Soluções Atendidas</h4>
-            <ul className="space-y-2">
-              <li><span className="text-slate-300">Mercado Envios Flex SP</span></li>
-              <li><span className="text-slate-300">Shopee Direta & Flex</span></li>
-              <li><span className="text-slate-300">Amazon Prime Same Day</span></li>
-              <li><span className="text-slate-300">Magalu Entregas Hoje</span></li>
-              <li><span className="text-slate-300">Coleta Dedicada em Estoque</span></li>
-              <li><span className="text-slate-300">Entregas Express VIP</span></li>
+          {/* SOLUTIONS */}
+          <div className="space-y-4 lg:col-span-2">
+
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white">
+              Soluções
+            </h4>
+
+            <ul className="space-y-2.5">
+
+              <li>
+                <Link
+                  to="/shopee-entrega-direta"
+                  className="transition-colors hover:text-[#00e7fe]"
+                >
+                  Shopee Entrega Direta
+                </Link>
+              </li>
+
+              <li>
+                <a
+                  href="/#servicos"
+                  className="transition-colors hover:text-[#00e7fe]"
+                >
+                  Coletas programadas
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/#servicos"
+                  className="transition-colors hover:text-[#00e7fe]"
+                >
+                  Entregas Same Day
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/#simulador"
+                  className="transition-colors hover:text-[#00e7fe]"
+                >
+                  Simulador de operação
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/#faq"
+                  className="transition-colors hover:text-[#00e7fe]"
+                >
+                  Perguntas frequentes
+                </a>
+              </li>
+
             </ul>
+
           </div>
 
-          {/* Col 5: Atendimento & Hub */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Atendimento & Hub SP</h4>
-            <div className="space-y-2.5 text-xs text-slate-300">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#00e7fe] shrink-0 mt-0.5" />
-                <span>Hub Central: R. São Leopoldo, 811 - Belenzinho, São Paulo - SP</span>
+          {/* REGIONAL */}
+          <div className="space-y-4 lg:col-span-2">
+
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white">
+              Atendimento
+            </h4>
+
+            <ul className="space-y-2.5">
+
+              {regionalLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="transition-colors hover:text-[#00e7fe]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+
+            </ul>
+
+          </div>
+
+          {/* CONTACT */}
+          <div className="space-y-4 lg:col-span-2">
+
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white">
+              Contato
+            </h4>
+
+            <div className="space-y-3 text-[11px] text-slate-400">
+
+              <div className="flex items-start gap-2.5">
+
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#00e7fe]" />
+
+                <span className="leading-relaxed">
+                  Rua São Leopoldo, 811
+                  <br />
+                  Belenzinho
+                  <br />
+                  São Paulo - SP
+                </span>
+
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <span>Seg a Sáb: 07h00 às 22h00</span>
+
+              <div className="flex items-center gap-2.5">
+
+                <Phone className="h-4 w-4 shrink-0 text-[#00e7fe]" />
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-[#00e7fe]"
+                >
+                  (11) 98022-4789
+                </a>
+
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <a href={buildWhatsAppLink()} className="hover:text-[#00e7fe] transition-colors">(11) 98022-4789</a>
+
+              <div className="flex items-start gap-2.5">
+
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#00e7fe]" />
+
+                <a
+                  href="mailto:operacional@nobresentregas.com.br"
+                  className="break-all transition-colors hover:text-[#00e7fe]"
+                >
+                  operacional@nobresentregas.com.br
+                </a>
+
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <span>operacional@nobresentregas.com.br</span>
+
+              <div className="flex items-start gap-2.5">
+
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#00e7fe]" />
+
+                <span className="leading-relaxed">
+                  Atendimento conforme horário operacional
+                </span>
+
               </div>
+
             </div>
 
-            <div className="pt-2">
-              <a
-                href={buildWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-[#00e7fe]/10 text-xs font-semibold text-[#00e7fe] border border-[#00e7fe]/30 hover:border-[#00e7fe]/50 transition-all shadow-[0_0_15px_rgba(0,231,254,0.1)]"
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp Plantão Operacional</span>
-              </a>
-            </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+        {/* SEO / REGIONAL CONTEXT */}
+        <div className="mt-12 rounded-2xl border border-white/5 bg-white/[0.015] px-5 py-4">
+
+          <p className="text-[10px] leading-relaxed text-slate-600">
+            A Nobres Entregas oferece soluções de logística de última milha
+            para sellers e operações de e-commerce em São Paulo e Grande São
+            Paulo. A disponibilidade de coleta e entrega depende do endereço,
+            volume, frequência, modalidade utilizada e regiões de destino.
+          </p>
+
+        </div>
+
+        {/* BOTTOM */}
+        <div className="mt-8 flex flex-col gap-5 border-t border-white/5 pt-7 sm:flex-row sm:items-end sm:justify-between">
+
           <div>
-            <p>© {new Date().getFullYear()} Nobres Entregas Flex Logística Ltda. Todos os direitos reservados.</p>
-            <p className="text-[10px] text-slate-600 mt-0.5">CNPJ: 00.000.000/0001-00 • Especialista em Logística Same Day SP</p>
+
+            <p className="text-[11px] text-slate-500">
+              © {currentYear} Nobres Entregas. Todos os direitos reservados.
+            </p>
+
+            <p className="mt-1 text-[10px] text-slate-600">
+              CNPJ 52.982.861/0001-16 • São Paulo - SP
+            </p>
+
           </div>
 
-          <div className="flex items-center gap-6">
-            <span>Privacidade & Termos</span>
-            <span>SLA Garantido</span>
-            <span>São Paulo - Brasil</span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] text-slate-600">
+
+            <a
+              href="/#faq"
+              className="transition-colors hover:text-slate-400"
+            >
+              Dúvidas frequentes
+            </a>
+
+            <Link
+              to="/mercado-livre-envios-flex/regioes-atendidas"
+              className="transition-colors hover:text-slate-400"
+            >
+              Regiões atendidas
+            </Link>
+
+            <span>
+              São Paulo • Brasil
+            </span>
+
           </div>
+
         </div>
 
       </div>
