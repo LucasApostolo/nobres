@@ -1,57 +1,56 @@
 import React from 'react';
 
 import {
+  ArrowRight,
   CheckCircle2,
   Headphones,
-  MapPin,
+  MapPinned,
   PackageCheck,
   Route,
   ShieldCheck,
   ShoppingBag,
-  Truck,
+  Store,
 } from 'lucide-react';
 
-const trustPoints = [
+import { Link } from 'react-router-dom';
+
+const sellerAdvantages = [
   {
-    icon: Truck,
-    title: 'Coletas programadas',
+    icon: Store,
+    title: 'Operação pensada para sellers',
     description:
-      'Planejamento conforme endereço, volume e frequência da operação.',
+      'A logística é estruturada considerando a rotina de expedição, volume de pedidos, horário operacional e canais de venda da loja.',
   },
   {
     icon: Route,
-    title: 'Operação de última milha',
+    title: 'Planejamento antes de expandir',
     description:
-      'Organização de rotas conforme capacidade e regiões de entrega.',
+      'Cobertura, capacidade e frequência são avaliadas antes da definição da operação, evitando promessas incompatíveis com a rota.',
   },
   {
     icon: Headphones,
-    title: 'Suporte operacional',
+    title: 'Contato com a operação',
     description:
-      'Canal de comunicação para acompanhamento de coletas e ocorrências.',
+      'Acompanhamento para tratar dúvidas e ocorrências relacionadas às coletas e entregas da sua operação.',
   },
 ];
 
-const operationHighlights = [
+const platformCards = [
   {
     icon: ShoppingBag,
-    value: 'Mercado Livre',
-    label: 'Operação para Envios Flex',
+    eyebrow: 'Mercado Livre',
+    title: 'Envios Flex',
+    description:
+      'Operação de coleta e última milha para sellers que utilizam o Mercado Livre Envios Flex.',
+    href: '/mercado-livre-envios-flex',
   },
   {
     icon: PackageCheck,
-    value: 'Shopee',
-    label: 'Operação para Entrega Direta',
-  },
-  {
-    icon: MapPin,
-    value: 'São Paulo',
-    label: 'Capital e Grande SP',
-  },
-  {
-    icon: ShieldCheck,
-    value: 'Sob análise',
-    label: 'Operação dimensionada por seller',
+    eyebrow: 'Shopee',
+    title: 'Entrega Direta',
+    description:
+      'Estrutura logística para vendedores elegíveis à modalidade Shopee Entrega Direta.',
+    href: '/shopee-entrega-direta',
   },
 ];
 
@@ -73,30 +72,31 @@ export const TestimonialsSection: React.FC = () => {
 
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
             <ShieldCheck className="h-3.5 w-3.5" />
-            Estrutura para operações de e-commerce
+            Estrutura especializada
           </div>
 
           <h2
             id="trust-heading"
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
-            Logística pensada para a rotina de{' '}
+            Logística que acompanha a rotina de quem{' '}
             <span className="bg-gradient-to-r from-[#00e7fe] to-[#008ef4] bg-clip-text text-transparent">
-              sellers
+              vende todos os dias
             </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            Da coleta à última milha, estruturamos a operação considerando
-            volume, localização, marketplaces utilizados e regiões de entrega.
+            Uma operação de entregas rápidas precisa considerar muito mais do
+            que apenas retirar pacotes. Volume, capacidade, cobertura e
+            acompanhamento precisam funcionar em conjunto.
           </p>
 
         </div>
 
-        {/* MAIN TRUST CARDS */}
-        <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+        {/* ADVANTAGES */}
+        <div className="mb-8 grid grid-cols-1 gap-5 md:grid-cols-3">
 
-          {trustPoints.map((item) => {
+          {sellerAdvantages.map((item) => {
             const Icon = item.icon;
 
             return (
@@ -112,7 +112,7 @@ export const TestimonialsSection: React.FC = () => {
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                <p className="mt-3 text-xs leading-relaxed text-slate-400">
                   {item.description}
                 </p>
 
@@ -126,35 +126,83 @@ export const TestimonialsSection: React.FC = () => {
 
         </div>
 
-        {/* OPERATION HIGHLIGHTS */}
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {/* PLATFORM AREA */}
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
 
-          {operationHighlights.map((item) => {
-            const Icon = item.icon;
+          {/* LEFT INFO */}
+          <div className="rounded-3xl border border-white/5 bg-white/[0.02] p-6 sm:p-8 lg:col-span-5">
 
-            return (
-              <div
-                key={item.value}
-                className="rounded-2xl border border-white/5 bg-white/[0.025] p-4 sm:p-5"
-              >
-                <div className="mb-3 flex items-center gap-2">
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-500/15 bg-emerald-500/10 text-emerald-400">
+              <MapPinned className="h-5 w-5" />
+            </div>
 
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-[#00e7fe]">
-                    <Icon className="h-4 w-4" />
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-400">
+              São Paulo e Grande SP
+            </p>
+
+            <h3 className="text-xl font-extrabold text-white sm:text-2xl">
+              Cada operação começa pela análise da rota
+            </h3>
+
+            <p className="mt-3 text-xs leading-relaxed text-slate-400 sm:text-sm">
+              Antes da definição da coleta, avaliamos localização, volume
+              médio, frequência e principais destinos para entender a
+              viabilidade operacional.
+            </p>
+
+            <Link
+              to="/mercado-livre-envios-flex/regioes-atendidas"
+              className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-[#00e7fe] transition-colors hover:text-white"
+            >
+              Consultar regiões atendidas
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+
+          </div>
+
+          {/* PLATFORM CARDS */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7">
+
+            {platformCards.map((platform) => {
+              const Icon = platform.icon;
+
+              return (
+                <Link
+                  key={platform.href}
+                  to={platform.href}
+                  className="group flex flex-col rounded-3xl border border-white/5 bg-white/[0.025] p-6 transition-all hover:-translate-y-1 hover:border-[#00e7fe]/25 hover:bg-white/[0.04] sm:p-7"
+                >
+                  <div className="mb-6 flex items-center justify-between">
+
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#00e7fe]/15 bg-[#00e7fe]/10 text-[#00e7fe]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+
+                    <span className="rounded-full border border-white/5 bg-white/[0.03] px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-500">
+                      {platform.eyebrow}
+                    </span>
+
                   </div>
 
-                  <span className="text-sm font-extrabold text-white sm:text-base">
-                    {item.value}
-                  </span>
+                  <h3 className="text-lg font-extrabold text-white transition-colors group-hover:text-[#00e7fe]">
+                    {platform.title}
+                  </h3>
 
-                </div>
+                  <p className="mt-3 flex-1 text-xs leading-relaxed text-slate-400">
+                    {platform.description}
+                  </p>
 
-                <p className="text-[10px] leading-relaxed text-slate-500 sm:text-xs">
-                  {item.label}
-                </p>
-              </div>
-            );
-          })}
+                  <div className="mt-6 flex items-center gap-2 border-t border-white/5 pt-4 text-xs font-bold text-[#00e7fe]">
+                    Conhecer a solução
+
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+
+                </Link>
+              );
+            })}
+
+          </div>
 
         </div>
 
