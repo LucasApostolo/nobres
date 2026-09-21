@@ -1,114 +1,161 @@
 import React from 'react';
-import { 
-  Star, 
-  TrendingUp, 
-  CheckCircle2, 
-  Award 
+
+import {
+  CheckCircle2,
+  Headphones,
+  MapPin,
+  PackageCheck,
+  Route,
+  ShieldCheck,
+  ShoppingBag,
+  Truck,
 } from 'lucide-react';
-import { TESTIMONIALS } from '../data/logisticsData';
+
+const trustPoints = [
+  {
+    icon: Truck,
+    title: 'Coletas programadas',
+    description:
+      'Planejamento conforme endereço, volume e frequência da operação.',
+  },
+  {
+    icon: Route,
+    title: 'Operação de última milha',
+    description:
+      'Organização de rotas conforme capacidade e regiões de entrega.',
+  },
+  {
+    icon: Headphones,
+    title: 'Suporte operacional',
+    description:
+      'Canal de comunicação para acompanhamento de coletas e ocorrências.',
+  },
+];
+
+const operationHighlights = [
+  {
+    icon: ShoppingBag,
+    value: 'Mercado Livre',
+    label: 'Operação para Envios Flex',
+  },
+  {
+    icon: PackageCheck,
+    value: 'Shopee',
+    label: 'Operação para Entrega Direta',
+  },
+  {
+    icon: MapPin,
+    value: 'São Paulo',
+    label: 'Capital e Grande SP',
+  },
+  {
+    icon: ShieldCheck,
+    value: 'Sob análise',
+    label: 'Operação dimensionada por seller',
+  },
+];
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-20 bg-[#070A12] relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#10B981]/05 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-96 h-96 bg-[#008ef4]/08 rounded-full blur-[150px] pointer-events-none" />
+    <section
+      id="confianca"
+      className="relative overflow-hidden bg-[#070A12] py-20 sm:py-24"
+      aria-labelledby="trust-heading"
+    >
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute left-0 top-1/2 h-80 w-80 rounded-full bg-emerald-500/[0.05] blur-[130px]" />
+      <div className="pointer-events-none absolute right-10 top-1/3 h-96 w-96 rounded-full bg-[#008ef4]/[0.07] blur-[150px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#10B981]/30 text-[#10B981] text-[11px] font-bold uppercase tracking-wider mb-4">
-            <Award className="w-3.5 h-3.5" />
-            <span>Reputação Comprovada por Sellers de Elite</span>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        {/* HEADER */}
+        <div className="mx-auto mb-14 max-w-4xl text-center">
+
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+            <ShieldCheck className="h-3.5 w-3.5" />
+            Estrutura para operações de e-commerce
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            Quem Usa e Confia na <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Nobres Entregas Flex</span>
+          <h2
+            id="trust-heading"
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            Logística pensada para a rotina de{' '}
+            <span className="bg-gradient-to-r from-[#00e7fe] to-[#008ef4] bg-clip-text text-transparent">
+              sellers
+            </span>
           </h2>
 
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Veja o que dizem os lojistas que transformaram a logística de Same Day em uma máquina de vendas e fidelização.
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base">
+            Da coleta à última milha, estruturamos a operação considerando
+            volume, localização, marketplaces utilizados e regiões de entrega.
           </p>
+
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {TESTIMONIALS.map((t) => (
-            <div
-              key={t.id}
-              className="p-6 sm:p-7 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-[#00e7fe]/30 backdrop-blur-xl flex flex-col justify-between relative group transition-all duration-300 shadow-2xl"
-            >
-              <div>
-                {/* Top Badge & Metric */}
-                <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-white/5">
-                  <span className="text-[11px] font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20 flex items-center gap-1">
-                    <Award className="w-3 h-3" />
-                    {t.badge}
-                  </span>
+        {/* MAIN TRUST CARDS */}
+        <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-3">
 
-                  <span className="text-xs font-black text-[#10B981] bg-[#10B981]/10 px-2.5 py-1 rounded-full border border-[#10B981]/20 flex items-center gap-1">
-                    <TrendingUp className="w-3 h-3" />
-                    {t.salesIncrease}
-                  </span>
+          {trustPoints.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className="group rounded-3xl border border-white/5 bg-white/[0.025] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00e7fe]/20 hover:bg-white/[0.04] sm:p-7"
+              >
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#00e7fe]/15 bg-[#00e7fe]/10 text-[#00e7fe]">
+                  <Icon className="h-5 w-5" />
                 </div>
 
-                {/* Star Rating */}
-                <div className="flex items-center gap-1 mb-3">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
+                <h3 className="text-base font-extrabold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                  {item.description}
+                </p>
+
+                <div className="mt-5 flex items-center gap-2 border-t border-white/5 pt-4 text-[10px] font-semibold text-emerald-400">
+                  <CheckCircle2 className="h-3.5 w-3.5" />
+                  Estrutura operacional Nobres
+                </div>
+              </article>
+            );
+          })}
+
+        </div>
+
+        {/* OPERATION HIGHLIGHTS */}
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+
+          {operationHighlights.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={item.value}
+                className="rounded-2xl border border-white/5 bg-white/[0.025] p-4 sm:p-5"
+              >
+                <div className="mb-3 flex items-center gap-2">
+
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-[#00e7fe]">
+                    <Icon className="h-4 w-4" />
+                  </div>
+
+                  <span className="text-sm font-extrabold text-white sm:text-base">
+                    {item.value}
+                  </span>
+
                 </div>
 
-                {/* Comment */}
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                  "{t.comment}"
+                <p className="text-[10px] leading-relaxed text-slate-500 sm:text-xs">
+                  {item.label}
                 </p>
               </div>
+            );
+          })}
 
-              {/* Author & Volume Footer */}
-              <div className="pt-4 border-t border-white/5">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-11 h-11 rounded-full object-cover border border-[#00e7fe]/40 shadow-sm"
-                  />
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-white flex items-center gap-1.5">
-                      {t.name}
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
-                    </h4>
-                    <p className="text-[11px] text-[#00e7fe] font-medium">{t.storeName}</p>
-                    <p className="text-[10px] text-slate-400">{t.deliveryVolume}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Trust Badges Banner */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center shadow-lg">
-            <span className="block text-xl sm:text-2xl font-black text-[#10B981] mb-0.5">98.7%</span>
-            <span className="text-xs text-slate-400 font-medium">Pontualidade no Prazo</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center shadow-lg">
-            <span className="block text-xl sm:text-2xl font-black text-[#00e7fe] mb-0.5">+250k</span>
-            <span className="text-xs text-slate-400 font-medium">Pacotes Entregues</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center shadow-lg">
-            <span className="block text-xl sm:text-2xl font-black text-white mb-0.5">&lt; 3 min</span>
-            <span className="text-xs text-slate-400 font-medium">Tempo Médio de Resposta</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center shadow-lg">
-            <span className="block text-xl sm:text-2xl font-black text-[#10B981] mb-0.5">0 Bloqueios</span>
-            <span className="text-xs text-slate-400 font-medium">Por Atraso de Envio</span>
-          </div>
         </div>
 
       </div>
