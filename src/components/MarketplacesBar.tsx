@@ -1,17 +1,50 @@
 import React from 'react';
 import { CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { MARKETPLACES, Marketplace } from '../data/logisticsData';
+
+type Marketplace = {
+  id: string;
+  name: string;
+  borderColor: string;
+};
+
+const marketplaces: Marketplace[] = [
+  {
+    id: 'mercadolivre',
+    name: 'Mercado Livre',
+    borderColor: 'hover:border-amber-400/40',
+  },
+  {
+    id: 'shopee',
+    name: 'Shopee',
+    borderColor: 'hover:border-orange-500/40',
+  },
+  {
+    id: 'amazon',
+    name: 'Amazon',
+    borderColor: 'hover:border-amber-500/30',
+  },
+  {
+    id: 'magalu',
+    name: 'Magalu',
+    borderColor: 'hover:border-blue-500/30',
+  },
+  {
+    id: 'shopify',
+    name: 'Shopify',
+    borderColor: 'hover:border-emerald-500/30',
+  },
+];
 
 const MarketplaceLogo = ({ id }: { id: string }) => {
   switch (id) {
     case 'mercadolivre':
       return (
-        <div className="flex items-center justify-center w-full h-full overflow-visible">
+        <div className="flex h-full w-full items-center justify-center overflow-visible">
           <img
             src="/logos/mercadolivre.png"
             alt="Mercado Livre"
-            className="h-16 w-auto max-w-none object-contain scale-[1.8] sm:scale-[2.0]"
+            className="h-16 w-auto max-w-none scale-[1.8] object-contain sm:scale-[2.0]"
             loading="lazy"
           />
         </div>
@@ -19,11 +52,11 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
 
     case 'shopee':
       return (
-        <div className="flex items-center justify-center w-full h-full overflow-visible">
+        <div className="flex h-full w-full items-center justify-center overflow-visible">
           <img
             src="/logos/shopee.png"
             alt="Shopee"
-            className="h-14 w-auto max-w-none object-contain scale-[1.6] sm:scale-[1.8]"
+            className="h-14 w-auto max-w-none scale-[1.6] object-contain sm:scale-[1.8]"
             loading="lazy"
           />
         </div>
@@ -32,12 +65,12 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
     case 'amazon':
       return (
         <div className="flex flex-col items-center justify-center">
-          <span className="font-extrabold text-2xl text-white tracking-tighter leading-none">
+          <span className="text-2xl font-extrabold leading-none tracking-tighter text-white">
             amazon
           </span>
 
           <svg
-            className="w-14 h-3.5 text-amber-500 fill-current -mt-0.5"
+            className="-mt-0.5 h-3.5 w-14 fill-current text-amber-500"
             viewBox="0 0 50 12"
             aria-hidden="true"
           >
@@ -50,11 +83,11 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
     case 'magalu':
       return (
         <div className="flex flex-col items-center justify-center">
-          <span className="font-black text-2xl text-blue-500 tracking-tight lowercase">
+          <span className="text-2xl font-black lowercase tracking-tight text-blue-500">
             magalu
           </span>
 
-          <div className="h-1 w-14 bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-400 rounded-full mt-0.5" />
+          <div className="mt-0.5 h-1 w-14 rounded-full bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-400" />
         </div>
       );
 
@@ -71,7 +104,7 @@ const MarketplaceLogo = ({ id }: { id: string }) => {
             <path d="M5.3 8.4 3 18.3l13.5 2.8L14.9 7.3s-.9-.4-1.9-.4c-1.1 0-2.1.4-2.1.4L9.6 4.1 5.3 8.4z" />
           </svg>
 
-          <span className="font-extrabold text-2xl text-white tracking-tight">
+          <span className="text-2xl font-extrabold tracking-tight text-white">
             shopify
           </span>
         </div>
@@ -127,36 +160,36 @@ const marketplaceContent: Record<
 export const MarketplacesBar: React.FC = () => {
   return (
     <section
-      className="py-14 bg-neutral-950/80 border-y border-neutral-800/80"
+      className="border-y border-neutral-800/80 bg-neutral-950/80 py-14"
       aria-labelledby="marketplaces-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* CABEÇALHO */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
 
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-semibold text-emerald-400 mb-3 uppercase tracking-wider">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-400">
             Logística para marketplaces e e-commerce
           </span>
 
           <h2
             id="marketplaces-heading"
-            className="text-2xl sm:text-3xl font-bold text-white tracking-tight"
+            className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
           >
             Operação preparada para os principais canais de venda
           </h2>
 
-          <p className="text-sm sm:text-base text-neutral-400 mt-3 leading-relaxed">
-            Estruturamos coletas e entregas para vendedores que operam
-            nos principais marketplaces e plataformas de e-commerce.
+          <p className="mt-3 text-sm leading-relaxed text-neutral-400 sm:text-base">
+            Estruturamos coletas e entregas para vendedores que operam nos
+            principais marketplaces e plataformas de e-commerce.
           </p>
 
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
 
-          {MARKETPLACES.map((mp: Marketplace) => {
+          {marketplaces.map((mp) => {
             const content = marketplaceContent[mp.id] ?? {
               badge: 'E-commerce',
               tag: 'Soluções logísticas',
@@ -165,36 +198,34 @@ export const MarketplacesBar: React.FC = () => {
 
             const cardContent = (
               <>
-                <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-neutral-800 text-neutral-300">
+                <span className="rounded-full bg-neutral-800 px-2.5 py-0.5 text-[11px] font-medium text-neutral-300">
                   {content.badge}
                 </span>
 
-                <div className="my-5 h-14 flex items-center justify-center w-full overflow-visible">
+                <div className="my-5 flex h-14 w-full items-center justify-center overflow-visible">
                   <MarketplaceLogo id={mp.id} />
                 </div>
 
                 <div className="w-full">
-                  <h3 className="text-white font-bold text-base">
+                  <h3 className="text-base font-bold text-white">
                     {mp.name}
                   </h3>
 
-                  <p className="text-neutral-400 text-xs mt-1 leading-relaxed min-h-[32px]">
+                  <p className="mt-1 min-h-[32px] text-xs leading-relaxed text-neutral-400">
                     {content.tag}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-neutral-800/70 w-full flex items-center justify-center gap-1.5 text-xs text-emerald-400 font-medium">
-
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                <div className="mt-5 flex w-full items-center justify-center gap-1.5 border-t border-neutral-800/70 pt-3 text-xs font-medium text-emerald-400">
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
 
                   <span>{content.footer}</span>
-
                 </div>
 
                 {content.href && (
-                  <div className="mt-3 flex items-center justify-center gap-1 text-[11px] text-neutral-500 group-hover:text-amber-400 transition-colors">
+                  <div className="mt-3 flex items-center justify-center gap-1 text-[11px] text-neutral-500 transition-colors group-hover:text-amber-400">
                     Saiba mais
-                    <ArrowUpRight className="w-3 h-3" />
+                    <ArrowUpRight className="h-3 w-3" />
                   </div>
                 )}
               </>
@@ -205,7 +236,7 @@ export const MarketplacesBar: React.FC = () => {
                 <Link
                   key={mp.id}
                   to={content.href}
-                  className={`group bg-neutral-900/90 border border-neutral-800/90 p-5 rounded-2xl flex flex-col items-center justify-between text-center transition-all duration-300 ${mp.borderColor} hover:scale-[1.02] shadow-lg overflow-hidden`}
+                  className={`group flex flex-col items-center justify-between overflow-hidden rounded-2xl border border-neutral-800/90 bg-neutral-900/90 p-5 text-center shadow-lg transition-all duration-300 hover:scale-[1.02] ${mp.borderColor}`}
                 >
                   {cardContent}
                 </Link>
@@ -215,7 +246,7 @@ export const MarketplacesBar: React.FC = () => {
             return (
               <div
                 key={mp.id}
-                className={`bg-neutral-900/90 border border-neutral-800/90 p-5 rounded-2xl flex flex-col items-center justify-between text-center transition-all duration-300 ${mp.borderColor} hover:scale-[1.02] shadow-lg overflow-hidden`}
+                className={`flex flex-col items-center justify-between overflow-hidden rounded-2xl border border-neutral-800/90 bg-neutral-900/90 p-5 text-center shadow-lg transition-all duration-300 hover:scale-[1.02] ${mp.borderColor}`}
               >
                 {cardContent}
               </div>
@@ -225,14 +256,14 @@ export const MarketplacesBar: React.FC = () => {
         </div>
 
         {/* TEXTO DE APOIO */}
-        <div className="max-w-4xl mx-auto mt-8">
+        <div className="mx-auto mt-8 max-w-4xl">
 
-          <p className="text-center text-xs sm:text-sm text-neutral-400 leading-relaxed">
+          <p className="text-center text-xs leading-relaxed text-neutral-400 sm:text-sm">
             A operação logística varia conforme a modalidade utilizada,
-            endereço de coleta, volume diário e regiões de entrega.
-            Mercado Livre Envios Flex e Shopee Entrega Direta possuem
-            processos específicos que devem ser configurados pelo seller
-            nas respectivas plataformas.
+            endereço de coleta, volume diário e regiões de entrega. Mercado
+            Livre Envios Flex e Shopee Entrega Direta possuem processos
+            específicos que devem ser configurados pelo seller nas respectivas
+            plataformas.
           </p>
 
         </div>
