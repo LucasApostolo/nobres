@@ -25,6 +25,9 @@ import { Home } from './pages/Home';
 import { MercadoLivreFlex } from './pages/MercadoLivreFlex';
 import { ShopeeDireta } from './pages/ShopeeDireta';
 
+// Atendimento - Hub Regional
+import { Atendimento } from './pages/Atendimento';
+
 // Regional Pages
 import { AtendimentoGuarulhos } from './pages/AtendimentoGuarulhos';
 import { AtendimentoSuzano } from './pages/AtendimentoSuzano';
@@ -90,9 +93,7 @@ const NotFoundPage: React.FC = () => {
       </Helmet>
 
       <main className="flex min-h-[70vh] items-center justify-center bg-[#070A12] px-4 py-24">
-
         <div className="mx-auto max-w-xl text-center">
-
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#00e7fe]">
             Erro 404
           </span>
@@ -108,7 +109,6 @@ const NotFoundPage: React.FC = () => {
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-
             <Link
               to="/"
               className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#00e7fe] to-[#008ef4] px-6 py-3 text-sm font-bold text-black transition-transform hover:scale-[1.02]"
@@ -122,11 +122,8 @@ const NotFoundPage: React.FC = () => {
             >
               Mercado Livre Envios Flex
             </Link>
-
           </div>
-
         </div>
-
       </main>
     </>
   );
@@ -146,7 +143,6 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-
         <ScrollManager />
 
         <div className="min-h-screen bg-[#070A12] font-['Plus_Jakarta_Sans',sans-serif] text-slate-100 selection:bg-[#00e7fe]/30 selection:text-[#00e7fe]">
@@ -196,6 +192,12 @@ export default function App() {
             <Route
               path="/shopee-entrega-direta"
               element={<ShopeeDireta />}
+            />
+
+            {/* HUB DE ATENDIMENTO */}
+            <Route
+              path="/atendimento"
+              element={<Atendimento />}
             />
 
             {/* PÁGINAS REGIONAIS */}
@@ -251,7 +253,6 @@ export default function App() {
           />
 
         </div>
-
       </BrowserRouter>
     </HelmetProvider>
   );
