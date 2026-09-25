@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   <img
     src="/logos/nobres.png"
     alt="Nobres Entregas"
-    className="h-[46px] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] sm:h-[50px]"
+    className="h-[46px] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] sm:h-[54px]"
     onError={(event) => {
       event.currentTarget.style.display = 'none';
     }}
