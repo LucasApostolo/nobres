@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { 
-  ShieldCheck, 
-  ArrowRight, 
-  CheckCircle2, 
-  TrendingUp, 
-  Award,
-  Play
+import {
+  ArrowRight,
+  CheckCircle2,
+  MapPin,
+  PackageCheck,
+  Play,
+  Truck,
 } from 'lucide-react';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
@@ -16,154 +16,210 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  return (
-    <section id="inicio" className="relative pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden tech-grid-pattern">
-      {/* Background ambient neon glows */}
-      <div className="absolute top-[-100px] right-[-100px] w-[450px] h-[450px] bg-[#008ef4] opacity-[0.08] blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#00e7fe] opacity-[0.05] blur-[120px] rounded-full pointer-events-none -z-10" />
+  const operationalHighlights = [
+    {
+      icon: PackageCheck,
+      label: 'Coletas programadas',
+      color: 'text-emerald-400',
+      background: 'bg-emerald-400/[0.07]',
+      border: 'border-emerald-400/[0.12]',
+    },
+    {
+      icon: Truck,
+      label: 'Entregas Same Day',
+      color: 'text-[#00e7fe]',
+      background: 'bg-[#00e7fe]/[0.06]',
+      border: 'border-[#00e7fe]/[0.12]',
+    },
+    {
+      icon: MapPin,
+      label: 'São Paulo e Grande SP',
+      color: 'text-emerald-400',
+      background: 'bg-emerald-400/[0.07]',
+      border: 'border-emerald-400/[0.12]',
+    },
+  ];
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          
-          {/* Left Column: Copywriting & High Conversion CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            
-            {/* Live Operational Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-[11px] font-bold uppercase tracking-wider mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
-              <span>Status: Coletas e Entregas Same Day em São Paulo e Grande SP</span>
+  return (
+    <section
+      id="inicio"
+      className="relative overflow-hidden pb-16 pt-10 tech-grid-pattern md:pb-20 md:pt-14 lg:pb-24 lg:pt-16"
+    >
+      {/* Ambient light */}
+      <div className="pointer-events-none absolute right-[-180px] top-[-180px] -z-10 h-[520px] w-[520px] rounded-full bg-[#008ef4] opacity-[0.075] blur-[150px]" />
+
+      <div className="pointer-events-none absolute bottom-[-220px] left-[-180px] -z-10 h-[480px] w-[480px] rounded-full bg-[#00e7fe] opacity-[0.04] blur-[150px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+          {/* Conteúdo */}
+          <div className="flex flex-col items-start text-left lg:col-span-7">
+            {/* Eyebrow */}
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#00e7fe]/15 bg-[#00e7fe]/[0.05] px-3.5 py-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00e7fe] opacity-30" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00e7fe]" />
+              </span>
+
+              <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#66eefe] sm:text-[11px]">
+                Logística especializada para sellers
+              </span>
             </div>
 
-            {/* Main Headline (H1 Otimizado para SEO e Foco) */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-tight text-white mb-6">
-              Transportadora para <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Mercado Livre Envios Flex</span> e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e7fe] to-[#008ef4]">Shopee Entrega Direta</span> em São Paulo
+            {/* H1 — texto preservado para SEO */}
+            <h1 className="mb-6 max-w-[880px] text-[2.55rem] font-extrabold leading-[1.04] tracking-[-0.035em] text-white sm:text-[3.25rem] lg:text-[3.35rem] xl:text-[3.65rem]">
+              Transportadora para{' '}
+              <span className="bg-gradient-to-r from-[#00e7fe] to-[#008ef4] bg-clip-text text-transparent">
+                Mercado Livre Envios Flex
+              </span>{' '}
+              e{' '}
+              <span className="bg-gradient-to-r from-[#00e7fe] to-[#008ef4] bg-clip-text text-transparent">
+                Shopee Entrega Direta
+              </span>{' '}
+              em São Paulo
             </h1>
 
-            {/* Descrição Otimizada (Onde, Como e Especialidade) */}
-            <p className="text-base sm:text-lg text-slate-400 font-normal leading-relaxed mb-8 max-w-2xl">
-              Coletas diárias no seu CD, loja ou operação, com entregas no mesmo dia em São Paulo e Grande São Paulo. A <strong className="text-white font-medium">Nobres Entregas</strong> é especializada em Mercado Livre Envios Flex e Shopee Entrega Direta, oferecendo mais agilidade e controle para sua operação.
+            {/* Descrição */}
+            <p className="mb-7 max-w-[720px] text-[15px] font-normal leading-[1.8] text-slate-400 sm:text-[17px]">
+              Coletas programadas no seu CD, loja ou operação, com entregas
+              no mesmo dia em São Paulo e Grande São Paulo. A{' '}
+              <strong className="font-medium text-slate-200">
+                Nobres Entregas
+              </strong>{' '}
+              é especializada em Mercado Livre Envios Flex e Shopee Entrega
+              Direta, oferecendo mais agilidade e controle para sua operação.
             </p>
 
-            {/* Quick Guarantees Pill Tags */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full mb-8">
-              <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                <span className="text-xs font-medium text-slate-300">Coleta a partir de 1 pacote</span>
-              </div>
-              <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#00e7fe] shrink-0" />
-                <span className="text-xs font-medium text-slate-300">Melhor Horário de Corte</span>
-              </div>
-              <div className="flex items-center gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                <span className="text-xs font-medium text-slate-300">Sem contrato de fidelidade</span>
-              </div>
+            {/* Destaques operacionais */}
+            <div className="mb-8 grid w-full grid-cols-1 gap-2.5 sm:grid-cols-3">
+              {operationalHighlights.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.label}
+                    className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-white/[0.025] px-3.5 py-3"
+                  >
+                    <div
+                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border ${item.background} ${item.border}`}
+                    >
+                      <Icon className={`h-3.5 w-3.5 ${item.color}`} />
+                    </div>
+
+                    <span className="text-[11px] font-medium text-slate-300 xl:text-xs">
+                      {item.label}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
 
-            {/* Action CTAs com Hierarquia Clara */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-              {/* Botão Principal: Quero Cotar Minha Operação */}
-              <a
-                href={buildWhatsAppLink({
-                  message: 'Olá! Gostaria de cotar minha operação para Mercado Livre Envios Flex e Shopee Entrega Direta.'
-                })}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-[#00e7fe] to-[#008ef4] rounded-xl text-black font-bold text-base hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(0,142,244,0.3)] active:scale-[0.98]"
+            {/* CTAs */}
+            <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
+              <button
+                type="button"
+                onClick={onOpenQuoteModal}
+                className="group flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#00e7fe] to-[#008ef4] px-7 py-3.5 text-sm font-bold text-[#031015] shadow-[0_10px_32px_rgba(0,142,244,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_38px_rgba(0,142,244,0.30)] active:translate-y-0 sm:text-[15px]"
               >
                 <span>Quero Cotar Minha Operação</span>
-                <ArrowRight className="w-5 h-5 text-black stroke-[2.5]" />
-              </a>
 
-              {/* Botão Secundário: Como Funciona a Coleta */}
+                <ArrowRight className="h-4 w-4 stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+
               <a
                 href="#passo-a-passo"
-                className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-semibold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm"
+                className="group flex items-center justify-center gap-2.5 rounded-xl border border-white/[0.09] bg-white/[0.025] px-7 py-3.5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-white/[0.14] hover:bg-white/[0.05] hover:text-white"
               >
                 <span>Como Funciona a Coleta</span>
-                <ArrowRight className="w-4 h-4 text-slate-400" />
+
+                <ArrowRight className="h-4 w-4 text-slate-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-slate-300" />
               </a>
             </div>
 
-            {/* Trust SLA Highlight Bar */}
-            <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center gap-6 text-xs text-slate-400">
-              <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded-lg bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/20">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-200">98.7% Taxa de SLA</p>
-                  <p className="text-[11px] text-slate-400">Entregas no prazo garantido</p>
-                </div>
+            {/* Micro confiança */}
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-slate-500">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400/80" />
+                Operação para sellers
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded-lg bg-[#00e7fe]/10 text-[#00e7fe] border border-[#00e7fe]/20">
-                  <TrendingUp className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-200">+1.000.000 milhão Pacotes</p>
-                  <p className="text-[11px] text-slate-400">Entregues com sucesso em SP</p>
-                </div>
+              <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:block" />
+
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400/80" />
+                Atendimento comercial especializado
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                  <Award className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-200">Zero Bloqueios</p>
-                  <p className="text-[11px] text-slate-400">Termômetro 100% verde</p>
-                </div>
+              <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:block" />
+
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400/80" />
+                Cobertura regional
               </div>
             </div>
-
           </div>
 
-          {/* Right Column: Embedded Presentation Video Frame */}
-          <div className="lg:col-span-5 relative w-full">
-            <div className="relative rounded-3xl bg-white/[0.03] border border-[#00e7fe]/20 p-2 shadow-2xl backdrop-blur-xl group overflow-hidden">
-              
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#00e7fe]/15 blur-[50px] pointer-events-none"></div>
+          {/* Vídeo */}
+          <div className="relative w-full lg:col-span-5">
+            {/* glow */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00e7fe]/10 blur-[80px]" />
 
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/10">
-                
+            <div className="group relative overflow-hidden rounded-[26px] border border-[#00e7fe]/20 bg-white/[0.025] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.38)] backdrop-blur-xl">
+              <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-[#00e7fe]/10 blur-[55px]" />
+
+              <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-[19px] border border-white/[0.08] bg-black">
                 {!isPlaying ? (
-                  <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
-                    <img 
-                      src="/logos/cover-meli-shopee.png" 
-                      alt="Apresentação Nobres Entregas - Mercado Livre Envios Flex e Shopee Entrega Direta" 
-                      className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
+                  <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-900 to-black">
+                    <img
+                      src="/logos/cover-meli-shopee.png"
+                      alt="Apresentação da operação Nobres Entregas para Mercado Livre Envios Flex e Shopee Entrega Direta"
+                      className="h-full w-full object-cover opacity-[0.78] transition-transform duration-700 group-hover:scale-[1.025]"
                     />
-                    
+
+                    {/* overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/5" />
+
                     <button
+                      type="button"
                       onClick={() => setIsPlaying(true)}
-                      className="absolute w-16 h-16 rounded-full bg-gradient-to-r from-[#00e7fe] to-[#008ef4] text-black flex items-center justify-center shadow-[0_0_25px_rgba(0,231,254,0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer group/btn"
-                      aria-label="Tocar Vídeo de Apresentação"
+                      className="group/play absolute flex h-[68px] w-[68px] items-center justify-center rounded-full border border-white/20 bg-gradient-to-r from-[#00e7fe] to-[#008ef4] text-black shadow-[0_0_35px_rgba(0,231,254,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_45px_rgba(0,231,254,0.48)] active:scale-95"
+                      aria-label="Assistir apresentação da Nobres Entregas"
                     >
-                      <Play className="w-7 h-7 fill-current ml-1 text-black" />
+                      <Play className="ml-1 h-7 w-7 fill-current transition-transform duration-300 group-hover/play:scale-105" />
                     </button>
 
-                    <div className="absolute bottom-3 left-3 right-3 px-3.5 py-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-xs text-white font-medium flex items-center justify-between">
-                      <span>Conheça a operação Nobres Entregas</span>
-                      <span className="text-[#00e7fe] font-bold">0:18 min</span>
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 rounded-xl border border-white/[0.09] bg-black/65 px-3.5 py-2.5 backdrop-blur-md">
+                      <div className="min-w-0">
+                        <p className="truncate text-[11px] font-semibold text-white sm:text-xs">
+                          Conheça a operação Nobres Entregas
+                        </p>
+                      </div>
+
+                      <span className="shrink-0 text-[11px] font-bold text-[#00e7fe]">
+                        0:18
+                      </span>
                     </div>
                   </div>
                 ) : (
-                  <video 
-                    controls 
-                    autoPlay 
-                    className="w-full h-full object-cover"
+                  <video
+                    controls
+                    autoPlay
+                    playsInline
+                    className="h-full w-full object-cover"
                     src="/videos/apresentacao.mp4"
                   >
                     Seu navegador não suporta a exibição deste vídeo.
                   </video>
                 )}
-
               </div>
             </div>
-          </div>
 
+            {/* legenda externa */}
+            <div className="mt-4 flex items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.14em] text-slate-600 lg:justify-start">
+              <span className="h-1 w-1 rounded-full bg-[#00e7fe]" />
+              Operação logística para marketplaces
+            </div>
+          </div>
         </div>
       </div>
     </section>
