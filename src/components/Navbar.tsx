@@ -120,32 +120,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               isScrolled ? 'h-[68px]' : 'h-[76px]'
             }`}
           >
-            {/* Logo */}
-            <a
-              href="/"
-              onClick={closeMobileMenu}
-              className="group flex min-w-0 items-center gap-3"
-              aria-label="Nobres Entregas - Página inicial"
-            >
-              <img
-                src="/logos/nobres.png"
-                alt="Nobres Entregas"
-                className="h-9 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-10"
-                onError={(event) => {
-                  event.currentTarget.style.display = 'none';
-                }}
-              />
-
-              <div className="hidden min-w-0 flex-col sm:flex">
-                <span className="truncate text-[17px] font-bold tracking-[-0.02em] text-white lg:text-[18px]">
-                  Nobres Entregas
-                </span>
-
-                <span className="mt-0.5 text-[9px] font-medium uppercase tracking-[0.16em] text-slate-500">
-                  Logística para marketplaces
-                </span>
-              </div>
-            </a>
+{/* Logo */}
+<a
+  href="/"
+  onClick={closeMobileMenu}
+  className="group flex shrink-0 items-center"
+  aria-label="Nobres Entregas - Página inicial"
+>
+  <img
+    src="/logos/nobres.png"
+    alt="Nobres Entregas"
+    className="h-[46px] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] sm:h-[50px]"
+    onError={(event) => {
+      event.currentTarget.style.display = 'none';
+    }}
+  />
+</a>
 
             {/* Desktop */}
             <nav
